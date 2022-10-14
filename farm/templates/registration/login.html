@@ -1,0 +1,67 @@
+<div class="authentication-wrapper authentication-3">
+    <div class="authentication-inner">
+
+      <!-- Side container -->
+      <!-- Do not display the container on extra small, small and medium screens -->
+        <div class="ui-bg-overlay bg-dark opacity-50"></div>
+
+        <!-- Text -->
+        <div class="w-100 text-white px-5">
+          <div class="text-large /*font-weight-light*/">
+            <br/><br/><br/><br/>
+            ...
+          </div>
+        </div>
+        <!-- /.Text -->
+      </div>
+      <!-- / Side container -->
+
+      <!-- Form container -->
+      <div class="d-flex col-lg-4 align-items-center bg-white p-5">
+        <!-- Inner container -->
+        <!-- Have to add `.d-flex` to control width via `.col-*` classes -->
+        <div class="d-flex col-sm-7 col-md-5 col-lg-12 px-0 px-xl-4 mx-auto">
+          <div class="w-100">
+
+            <!-- Logo -->
+            <div class="d-flex justify-content-center align-items-center">
+              <!-- <div class="ui-w-140"> -->
+                <div class="w-100 position-relative text-center" style="padding-bottom: 54%">
+                  <h4 class="mt-4">{{ settings.APP_NAME }}</h4>
+                </div>
+              <!-- </div> -->
+            </div>
+            <!-- / Logo -->
+
+            <h4 class="text-center text-lighter font-weight-normal mt-5 mb-0">Ingresa a tu cuenta</h4>
+
+            <!-- Form -->
+            <form class="my-5" method="post" action="{% url 'login' %}">
+              {% csrf_token %}
+              <div class="form-group">
+                <label class="form-label d-flex justify-content-between align-items-end">
+                  <a href="{% url 'password_reset' %}" class="d-block small">'Forgotten your password or username?'</a>
+                </label>
+              </div>
+              <div class="d-flex justify-content-between align-items-center m-0">
+                <label class="custom-control custom-checkbox m-0">
+                  <input type="checkbox" class="custom-control-input">
+                  <span class="custom-control-label">Recordar contraseña</span>
+                </label>
+                <button type="submit" class="btn btn-primary">'Sign In'</button>
+                <input type="hidden" name="next" value="{{ next }}">
+              </div>
+            </form>
+            <!-- / Form -->
+
+            <!-- <div class="text-center text-muted">
+              Don't have an account yet? <a href="javascript:void(0)">Sign Up</a>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+      <!-- / Form container -->
+
+    </div>
+  </div>

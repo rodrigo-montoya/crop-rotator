@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Tables {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+{% if campo_exists %}
+  <a href="{% url 'farm:huerta_update' pk=campo.id %}" class="btn btn-primary btn-round">Editar mi huerta</a>
+{% else %}
+  <a href="{% url 'farm:huerta_create' %}" class="btn btn-primary btn-round">Crear mi huerta</a>
+{% endif %}
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
