@@ -12,6 +12,7 @@ from farm.models import (
 @admin.register(Campo)
 class CampoAdmin(admin.ModelAdmin):
     list_display = (
+        "id",
         "field_name",
         "delta"
     )
@@ -19,6 +20,8 @@ class CampoAdmin(admin.ModelAdmin):
 @admin.register(Sector)
 class SectorAdmin(admin.ModelAdmin):
     list_display = (
+        'id',
+        'field',
         "sector_num",
         "camas"
     )

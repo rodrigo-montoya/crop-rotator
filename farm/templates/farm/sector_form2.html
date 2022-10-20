@@ -17,16 +17,15 @@
                 <div class="card-body">
                     <form class="form-horizontal" method="POST" action="">
                         {% csrf_token %}
-                        {{ form.as_p}}
-                        {{ sector_forms.management_form }}
-                        {% for sector_f in sector_forms %}
+                        {{ form.management_form }}
+                        {% for f in form %}
                         <div class="row form-row spacer">
                             <div class="col-2">
-                                <label>{{ sector_f.camas.label }}</label>
+                                <label>{{ f.camas.label }}</label>
                             </div>
                             <div class="col-4">
                                 <div class="input-group">
-                                    {{ sector_f.camas }}
+                                    {{ f.camas }}
                                     <div class="input-group-append">
                                         <button type="button" class="btn btn-success add-form-row">+</button>
                                     </div>
