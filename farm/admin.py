@@ -3,8 +3,8 @@ from farm.models import (
     Campo,
     Sector,
     FamiliaBotanica,
-    Cultivos,
-    Bloques,
+    Cultivo,
+    Bloque,
 )
 
 # Register your models here.
@@ -32,22 +32,23 @@ class FamiliaBotanicaAdmin(admin.ModelAdmin):
         "familia_name",
     )
 
-@admin.register(Cultivos)
+@admin.register(Cultivo)
 class CultivosAdmin(admin.ModelAdmin):
     list_display = (
         "cultivo_name",
-        "familia_botanica"
+        "familia_botanica",
+        "precio_por_cama"
     )
 
-@admin.register(Bloques)
-class BloquesAdmin(admin.ModelAdmin):
+@admin.register(Bloque)
+class BloqueAdmin(admin.ModelAdmin):
     list_display = (
         "cultivo",
-        "dia_planatacion",
+        "dia_plantacion",
         "tiempo_crecimiento",
         "camas_requeridas",
-        "precio",
-        "dia_finalizar",
+        #"precio",
+        #"dia_finalizar",
         "sector",
         "cama"
     )

@@ -1,33 +1,37 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Page User {% endblock %}
+{% block title %} UI Tables {% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
 
-          <div class="row">
-            <div class="col-md-8">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                {% if is_add %}
-                    <h4 class="card-title">Crear Huerta</h4>
-                    <p class="card-category">Crear huerta y sectores</p>
-                {% else %}
-                    <h4 class="card-title">Editar Huerta</h4>
-                    <p class="card-category">Editar huerta y sectores</p>
-                {% endif %}
+<a href="{% url 'farm:mis_cultivos_create' %}" class="btn btn-primary btn-round">Registrar nuevo cultivo</a>
+
+<div class="row">
+    {% for cultivo in object_list %}
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header card-header-success card-header-icon">
+                    <div class="card-icon">
+                        <i class="material-icons">yard</i>
+                    </div>
+                    <p class="card-category">{{ cultivo }}</p>
+                    <h3 class="card-title">num
+                        <small>bloques</small>
+                    </h3>
                 </div>
-                <div class="card-body">
-                    <form method="post">{% csrf_token %}
-                        {{ form.as_p}}
-                        <input type="submit" value="Save" class="btn btn-primary pull-right">
-                    </form>
+                <div class="card-footer">
+                    <div class="stats">
+                        <i class="material-icons text-danger">warning</i>
+                        <a href="#pablo">update</a>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+    {% endfor %}
+</div>
 
 {% endblock content %}
 

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, View, FormView, FormMixin
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 from django.views.generic.base import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -14,7 +15,7 @@ from django.contrib.auth import authenticate, login
 
 from django.forms import formset_factory, modelformset_factory
 from crop_rotator.views import CreateOrUpdateView
-from .models import Campo, Sector
+from .models import Campo, Sector, Cultivo, Bloque, FamiliaBotanica
 from . import forms
 from django import forms as django_forms
 
@@ -38,19 +39,6 @@ class MiHuertaView(LoginRequiredMixin, TemplateView):
             context['campo_exists'] = True
             context['campo'] = Campo.objects.first()
         return context
-
-# class HuertaCreateUpdateView(LoginRequiredMixin, CreateOrUpdateView):
-#     model = Campo
-#     fields = ['field_name', 'delta']
-
-#     def get_success_url(self):
-#         return reverse('farm:mi_huerta')
-
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['segment'] = 'mi_huerta'
-#         context['is_add'] = self.is_add
-#         return context
 
 class HuertaCreateUpdateView(LoginRequiredMixin, CreateOrUpdateView):
     template_name = "farm/sector_form.html"
@@ -93,56 +81,67 @@ class HuertaCreateUpdateView(LoginRequiredMixin, CreateOrUpdateView):
         return super().form_valid(form)
 
 
-# class SectorFormView2(FormView):
-#     template_name = "farm/sector_form2.html"
-#     success_url = '/'
-#     form_class = modelformset_factory(
-#         Sector,
-#         fields=('camas',),
-#         extra=1,
-#         labels = {
-#             'camas': 'Sector',
-#         },
-#         widgets={
-#             'camas': django_forms.NumberInput(attrs={
-#                 'class': 'form-control',
-#                 'placeholder': 'Ingrese la cantidad de camas'
-#             })
-#         }
-#     )
-
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         form = self.form_class(queryset=Sector.objects.none())
-#         context['form'] = form
-#         return context
-
-#     def form_valid(self, form):
-#         field = Campo.objects.first()
-#         counter = 0
-#         for f in form:
-#             counter += 1
-#             obj = f.save(commit=False)
-#             obj.field = field
-#             obj.sector_num = counter
-#             obj.save()
-#         return super().form_valid(form)
-
-class MisCultivosView(LoginRequiredMixin, TemplateView):
+class MisCultivosView(LoginRequiredMixin, ListView):
     template_name = "farm/mis_cultivos.html"
+    model = Cultivo
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['segment'] = 'mis_cultivos'
         return context
 
-class CronogramaView(LoginRequiredMixin, TemplateView):
+
+class MisCultivosCreateUpdateView(LoginRequiredMixin, CreateOrUpdateView):
+    template_name = "farm/cultivo_form.html"
+    model = Cultivo
+    form_class = forms.CultivoForm
+    bloque_form = forms.BloquesFormset
+
+    def get_success_url(self):
+        return reverse('farm:mis_cultivos')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['segment'] = 'mis_cultivos'
+        context['is_add'] = self.is_add
+        formset = None
+        # if self.is_add:
+        #     formset = self.sector_form(queryset=Sector.objects.none())
+        # else:
+        #     formset = self.sector_form(queryset=Sector.objects.filter(field=self.object))
+        formset = self.bloque_form(queryset=Bloque.objects.none())
+        context['bloque_forms'] = formset
+        return context
+
+    def form_valid(self, form):
+        formset = self.bloque_form(self.request.POST)
+        if form.is_valid() and formset.is_valid():
+            cultivo = form.save()
+            for bloque in formset:
+                the_obj = Bloque(
+                    cultivo=cultivo,
+                    dia_plantacion=bloque.cleaned_data['dia_plantacion'],
+                    tiempo_crecimiento=bloque.cleaned_data['tiempo_crecimiento'],
+                    camas_requeridas=bloque.cleaned_data['camas_requeridas'],
+                )
+                the_obj.save()
+                # obj = bloque.save(commit=False)
+                # obj.cultivo = cultivo
+                # obj.save()
+        return super().form_valid(form)
+
+
+class CronogramaView(LoginRequiredMixin, ListView):
+    model = Bloque
     template_name = "farm/cronograma.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['segment'] = 'cronograma'
+        campo = Campo.objects.first()
+        context['campo'] = campo
         return context
+
 
 class MiUsuarioView(LoginRequiredMixin, TemplateView):
     template_name = "farm/pagina_usuario.html"
