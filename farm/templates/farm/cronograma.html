@@ -34,7 +34,13 @@
           <div class="col row-header text-center text-vert-center">MAY</div>
           <div class="col row-header text-center text-vert-center">JUN</div>
           <div class="col row-header text-center text-vert-center">JUL</div>
-          <div class="col row-header text-center text-vert-center">AGO</div>
+          <div class="col row-header text-center text-vert-center" style="position:relative">
+            <span>AGO</span>
+            <div class="week week-1 border-top border-success"></div>
+            <div class="week week-2 border-top border-success"></div>
+            <div class="week week-3 border-top border-success"></div>
+            <div class="week week-4 border-top border-bottom border-success"></div>
+          </div>
         </th>
         {% for cama in campo.sectores.first.camas|times %}
           <td class="align-top">

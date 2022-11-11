@@ -6,6 +6,24 @@
     height: 48px;
 }
 
+.week {
+    height:12px;
+    width:1100%;
+    position:absolute;
+}
+.week-1 {
+    top:0%;
+}
+.week-2 {
+    top:25%;
+}
+.week-3 {
+    top:50%;
+}
+.week-4 {
+    top:75%;
+}
+
 div.text-vert-center {
     padding:13px 0;
 }
