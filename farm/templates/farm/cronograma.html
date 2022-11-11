@@ -1,0 +1,58 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+<link href="/static/assets/css/specific_style.css" rel="stylesheet" />
+{% endblock stylesheets %}
+
+{% block content %}
+<div>
+  <table class="table table-fixed-layout border border-success">
+    <thead>
+      <tr>
+        <th scope="col" class="text-center">Fecha\Camas</th>
+        {% for cama in campo.sectores.first.camas|times %}
+          <th scope="col" class="text-center">
+            {{ cama }}
+          </th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">
+          <div class="col row-header text-center text-vert-center">SEPT</div>
+          <div class="col row-header text-center text-vert-center">OCT</div>
+          <div class="col row-header text-center text-vert-center">NOV</div>
+          <div class="col row-header text-center text-vert-center">DIC</div>
+          <div class="col row-header text-center text-vert-center">ENE</div>
+          <div class="col row-header text-center text-vert-center">FEB</div>
+          <div class="col row-header text-center text-vert-center">MAR</div>
+          <div class="col row-header text-center text-vert-center">ABR</div>
+          <div class="col row-header text-center text-vert-center">MAY</div>
+          <div class="col row-header text-center text-vert-center">JUN</div>
+          <div class="col row-header text-center text-vert-center">JUL</div>
+          <div class="col row-header text-center text-vert-center">AGO</div>
+        </th>
+        {% for cama in campo.sectores.first.camas|times %}
+          <td class="align-top">
+            <div class="text-center" style="position:relative">
+              <div title=" 18:00 - 19:30" class="bloque rainbow rainbow-12 tipo-Cátedra nuevo curso-668785" style="height:48px">
+                  <a href="https://www.u-cursos.cl/ingenieria/2022/2/CC6909/6/">Trabajo de Título</a>
+                  <div class="pill rainbow rainbow-95">Cátedra</div>
+              </div>
+            </div>
+          </td>
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}

@@ -1,0 +1,38 @@
+.table-fixed-layout {
+    table-layout: fixed;
+}
+
+.row-header {
+    height: 48px;
+}
+
+div.text-vert-center {
+    padding:13px 0;
+}
+
+
+
+
+.bloque {
+    position: absolute;
+    border: 1px solid #333;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    transition: left 1s;
+    padding-left: 2px;
+}
+
+.rainbow.rainbow-12 {
+    --rainbow-color: 12;
+}
+
+div.rainbow, li.rainbow, p.rainbow {
+    color: hsl(var(--rainbow-color),35%,55%)!important;
+    background-color: hsl(var(--rainbow-color),25%,20%)!important;
+    border: hsl(calc(var(--rainbow-color) - 10),25%,25%);
+}
+
+.rainbow.rainbow-95 {
+    --rainbow-color: 95;
+}
