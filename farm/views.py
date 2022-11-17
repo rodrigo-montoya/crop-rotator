@@ -46,6 +46,16 @@ class HuertaCreateUpdateView(LoginRequiredMixin, CreateOrUpdateView):
     fields = ['field_name', 'delta']
     sector_form = forms.SectorFormSet
 
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.fields['field_name'].widget = django_forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Nombre del campo'})
+        form.fields['delta'].widget = django_forms.NumberInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'dias requeridos entre cultivos de la misma familia botanica'})
+        return form
+
     def get_success_url(self):
         return reverse('farm:mi_huerta')
 
@@ -140,6 +150,12 @@ class CronogramaView(LoginRequiredMixin, ListView):
         context['segment'] = 'cronograma'
         campo = Campo.objects.first()
         context['campo'] = campo
+        cultivos = Cultivo.objects.all()
+        context['cultivos'] = {}
+        i = 0
+        for cultivo in cultivos:
+            context['cultivos'][cultivo.cultivo_name] = i
+            i += 1
         return context
 
 

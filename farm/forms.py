@@ -51,11 +51,11 @@ class CultivoForm(forms.ModelForm):
         widgets = {
             'cultivo_name': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Ingrese el nombre del cultivo'
+                'placeholder': 'nombre del cultivo'
             }),
             'precio_por_cama': forms.NumberInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Ingrese el precio por cama'
+                'placeholder': 'precio por cama'
             })
         }
 

@@ -43,6 +43,7 @@ class CultivosAdmin(admin.ModelAdmin):
 @admin.register(Bloque)
 class BloqueAdmin(admin.ModelAdmin):
     list_display = (
+        "id",
         "cultivo",
         "dia_plantacion",
         "tiempo_crecimiento",

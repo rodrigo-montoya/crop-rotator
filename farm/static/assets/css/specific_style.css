@@ -28,29 +28,49 @@ div.text-vert-center {
     padding:13px 0;
 }
 
+th.text-break, div.text-break, h1.text-break {
+    word-wrap: break-word;
+}
 
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    padding: 0;
+    vertical-align: middle;
+    border-color: #ddd;
+}
 
+table h1 {
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0;
+}
 
 .bloque {
     position: absolute;
-    border: 1px solid #333;
-    left: 0;
-    right: 0;
+    border: 2px solid #333;
+    /* left: 0;
+    right: 0; */
     overflow: hidden;
-    transition: left 1s;
-    padding-left: 2px;
+    /* transition: left 1s; */
+    padding-left: 6px;
 }
 
-.rainbow.rainbow-12 {
-    --rainbow-color: 12;
+.bloque.active {
+    height: unset!important;
+    overflow: unset;
+    z-index: 1;
+}
+
+.rainbow.rainbow-shade {
+    --rainbow-color: 100;
 }
 
 div.rainbow, li.rainbow, p.rainbow {
-    color: hsl(var(--rainbow-color),35%,55%)!important;
-    background-color: hsl(var(--rainbow-color),25%,20%)!important;
-    border: hsl(calc(var(--rainbow-color) - 10),25%,25%);
-}
-
-.rainbow.rainbow-95 {
-    --rainbow-color: 95;
+    color: hsl(var(--rainbow-color),100%,10%)!important;
+    background-color: hsl(var(--rainbow-color),35%,70%)!important;
+    border: 1px solid hsl(calc(var(--rainbow-color) + 10),25%,25%);
 }

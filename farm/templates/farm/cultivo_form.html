@@ -19,14 +19,14 @@
         <form class="form-horizontal" method="POST" action="">
           {% csrf_token %}
           <div class="cultivo_form_div">
-            <p>Cultivo:</p>
+            <h3 class="font-weight-bold">Cultivo</h3>
             {{ form.as_p}}
           </div>
           {{ bloque_forms.management_form }}
 
           {% for bloque_f in bloque_forms %}
             <div class="row form-row spacer">
-              <p>Bloque:</p>
+              <h4 class="font-weight-bold">Bloque</h4>
               <div class="col-12">
                 <div class="input-group">
                   {% comment %}

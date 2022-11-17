@@ -17,15 +17,12 @@
                     <div class="card-icon">
                         <i class="material-icons">yard</i>
                     </div>
-                    <p class="card-category">{{ cultivo }}</p>
-                    <h3 class="card-title">num
-                        <small>bloques</small>
-                    </h3>
+                    <h3 class="card-title">{{ cultivo }}</h3>
+                    <p class="card-category">{{ cultivo.bloques.count }} bloque(s)</p>
                 </div>
-                <div class="card-footer">
-                    <div class="stats">
-                        <i class="material-icons text-danger">warning</i>
-                        <a href="#pablo">update</a>
+                <div class="card-footer justify-content-end">
+                    <div class="stats ">
+                        <a href="{% url 'farm:mis_cultivos_update' pk=cultivo.id %}" class="btn btn-primary btn-round">update</a>
                     </div>
                 </div>
             </div>
