@@ -23,18 +23,22 @@ class SectorAdmin(admin.ModelAdmin):
         'id',
         'field',
         "sector_num",
-        "camas"
+        "camas",
+        "active"
     )
 
 @admin.register(FamiliaBotanica)
 class FamiliaBotanicaAdmin(admin.ModelAdmin):
     list_display = (
+        'id',
         "familia_name",
     )
 
 @admin.register(Cultivo)
 class CultivosAdmin(admin.ModelAdmin):
     list_display = (
+        "id",
+        "campo",
         "cultivo_name",
         "familia_botanica",
         "precio_por_cama"
@@ -51,5 +55,7 @@ class BloqueAdmin(admin.ModelAdmin):
         #"precio",
         #"dia_finalizar",
         "sector",
-        "cama"
+        "cama",
+        "bloque_num",
+        "active",
     )

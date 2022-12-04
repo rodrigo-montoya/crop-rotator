@@ -1,0 +1,914 @@
+[
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add campo",
+    "content_type": 7,
+    "codename": "add_campo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change campo",
+    "content_type": 7,
+    "codename": "change_campo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete campo",
+    "content_type": 7,
+    "codename": "delete_campo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view campo",
+    "content_type": 7,
+    "codename": "view_campo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add familia botanica",
+    "content_type": 8,
+    "codename": "add_familiabotanica"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change familia botanica",
+    "content_type": 8,
+    "codename": "change_familiabotanica"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete familia botanica",
+    "content_type": 8,
+    "codename": "delete_familiabotanica"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view familia botanica",
+    "content_type": 8,
+    "codename": "view_familiabotanica"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add sector",
+    "content_type": 9,
+    "codename": "add_sector"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change sector",
+    "content_type": 9,
+    "codename": "change_sector"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete sector",
+    "content_type": 9,
+    "codename": "delete_sector"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view sector",
+    "content_type": 9,
+    "codename": "view_sector"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add cultivo",
+    "content_type": 10,
+    "codename": "add_cultivo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change cultivo",
+    "content_type": 10,
+    "codename": "change_cultivo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete cultivo",
+    "content_type": 10,
+    "codename": "delete_cultivo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view cultivo",
+    "content_type": 10,
+    "codename": "view_cultivo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add bloque",
+    "content_type": 11,
+    "codename": "add_bloque"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change bloque",
+    "content_type": 11,
+    "codename": "change_bloque"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete bloque",
+    "content_type": 11,
+    "codename": "delete_bloque"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view bloque",
+    "content_type": 11,
+    "codename": "view_bloque"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$VqD5lMasjsjbDYiIoFL2LH$vrfKwo2ihB1VIeVcHqfHsMq6JMpk2ggV9cj1m2PhG6E=",
+    "last_login": "2022-12-01T22:13:58.757Z",
+    "is_superuser": true,
+    "username": "rodrigo",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-12-01T22:13:26.213Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "farm",
+    "model": "campo"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "farm",
+    "model": "familiabotanica"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "farm",
+    "model": "sector"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "farm",
+    "model": "cultivo"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "farm",
+    "model": "bloque"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "npy2d8nslcl1qrj6beyjtbz7r8ezkys0",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pAyQAGX7nsGMsxQqRqalHZlvLtt0oVu_3vvv0XEbS1xa3mJE4urUOLyuyWkZ64H4AfW-yxprusyJXko8qRNDjPn1-10_w4KtrLXHtggWmBnwHpISuvQkzaGcbRB246IbDZe76J3QKEHQgfZubHTrEB8vsWsNxQ:1p0roc:FlzYm46zNXQmBSL1oq0D97NoO1z64mJZgJeqmY9pIuk",
+    "expire_date": "2022-12-15T22:13:58.791Z"
+  }
+},
+{
+  "model": "farm.campo",
+  "pk": 1,
+  "fields": {
+    "field_name": "huerta meli",
+    "delta": 28
+  }
+},
+{
+  "model": "farm.sector",
+  "pk": 1,
+  "fields": {
+    "field": 1,
+    "sector_num": 1,
+    "camas": 10,
+    "active": true
+  }
+},
+{
+  "model": "farm.sector",
+  "pk": 2,
+  "fields": {
+    "field": 1,
+    "sector_num": 2,
+    "camas": 10,
+    "active": true
+  }
+},
+{
+  "model": "farm.sector",
+  "pk": 3,
+  "fields": {
+    "field": 1,
+    "sector_num": 3,
+    "camas": 10,
+    "active": true
+  }
+},
+{
+  "model": "farm.sector",
+  "pk": 4,
+  "fields": {
+    "field": 1,
+    "sector_num": 4,
+    "camas": 10,
+    "active": true
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 1,
+  "fields": {
+    "familia_name": "lechuga"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 2,
+  "fields": {
+    "familia_name": "cilantro"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 3,
+  "fields": {
+    "familia_name": "betarraga"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 4,
+  "fields": {
+    "familia_name": "brasicas"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 5,
+  "fields": {
+    "familia_name": "rucula"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 6,
+  "fields": {
+    "familia_name": "rabanito"
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 1,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "lechuga",
+    "familia_botanica": 1,
+    "precio_por_cama": 1000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 2,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "cilantro",
+    "familia_botanica": 2,
+    "precio_por_cama": 2000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 3,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "betarraga",
+    "familia_botanica": 3,
+    "precio_por_cama": 2000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 4,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "brasicas",
+    "familia_botanica": 4,
+    "precio_por_cama": 3000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 5,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "rucula",
+    "familia_botanica": 5,
+    "precio_por_cama": 2500
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 6,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "rabanito",
+    "familia_botanica": 6,
+    "precio_por_cama": 3500
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 1,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2023-02-07",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 2,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2023-02-14",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 3,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2022-10-15",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 4,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2022-10-29",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 5,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2023-01-12",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 6,
+  "fields": {
+    "cultivo": 3,
+    "dia_plantacion": "2022-10-28",
+    "tiempo_crecimiento": 69,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 7,
+  "fields": {
+    "cultivo": 3,
+    "dia_plantacion": "2022-11-25",
+    "tiempo_crecimiento": 69,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 8,
+  "fields": {
+    "cultivo": 4,
+    "dia_plantacion": "2022-10-06",
+    "tiempo_crecimiento": 42,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 9,
+  "fields": {
+    "cultivo": 4,
+    "dia_plantacion": "2022-12-22",
+    "tiempo_crecimiento": 42,
+    "camas_requeridas": 4,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 10,
+  "fields": {
+    "cultivo": 4,
+    "dia_plantacion": "2023-03-02",
+    "tiempo_crecimiento": 42,
+    "camas_requeridas": 4,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 11,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2023-01-26",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 12,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2023-03-10",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 13,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2023-03-24",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 14,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2023-03-31",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 4
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 15,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2022-09-17",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 16,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2023-01-21",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 17,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2023-01-28",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 18,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2023-04-20",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "bloque_num": 4
+  }
+}
+]

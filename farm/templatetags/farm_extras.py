@@ -11,3 +11,7 @@ def times(value):
 @register.filter(name='add_days')
 def add_days(value, days):
     return value + datetime.timedelta(days=days)
+
+@register.filter
+def active(things, active=True):
+    return things.filter(active=active)

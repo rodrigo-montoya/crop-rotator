@@ -8,37 +8,67 @@
 {% endblock stylesheets %}
 
 {% block content %}
+<h2>Sector {{ page_obj.number }}</h2>
+
 <div>
   <table class="table table-fixed-layout border border-success">
     <thead>
       <tr>
         <th scope="col" class="text-center text-break">Fecha\Camas</th>
-        {% for cama in campo.sectores.first.camas|times %}
-          <th scope="col" class="text-center">
-            {{ cama }}
-          </th>
-        {% endfor %}
+        {% if object_list.first %}
+          {% for cama in object_list.first.camas|times %}
+            <th scope="col" class="text-center">
+              {{ cama }}
+            </th>
+          {% endfor %}
+        {% endif %}
       </tr>
     </thead>
     <tbody>
       <tr>
         <th id="months-column" scope="row">
         </th>
-        {% for cama in campo.sectores.first.camas|times %}
-          <td id="cama-{{ forloop.counter }}" class="align-top">
-          </td>
-        {% endfor %}
-        {% comment %}
-        <div class="text-center" style="position:relative">
-          <div title=" 18:00 - 19:30" class="bloque rainbow rainbow-12 tipo-Cátedra nuevo curso-668785" style="height:48px">
-              <a href="https://www.u-cursos.cl/ingenieria/2022/2/CC6909/6/">Trabajo de Título</a>
-              <div class="pill rainbow rainbow-95">Cátedra</div>
-          </div>
-        </div>
-        {% endcomment %}
+        {% if campo %}
+          {% for cama in campo.sectores.first.camas|times %}
+            <td id="cama-{{ forloop.counter }}" class="align-top">
+            </td>
+          {% endfor %}
+        {% endif %}
       </tr>
     </tbody>
   </table>
+</div>
+
+<div class="pagination justify-content-center">
+  <span class="step-links">
+    {% if page_obj.has_previous %}
+      <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-primary"><<</a>
+      {% if page_obj.number > 3 %}
+        <a href="?page=1" class="btn btn-muted">1</a>
+        {% if page_obj.number > 4 %}
+          <span>...</span>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+
+    {% for num in page_obj.paginator.page_range %}
+      {% if page_obj.number == num %}
+        <a href="?page={{ num }}" class="btn btn-primary">{{ num }}</a>
+      {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+        <a href="?page={{ num }}" class="btn btn-muted">{{ num }}</a>
+      {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+      {% if page_obj.number < page_obj.paginator.num_pages|add:'-3' %}
+        <span>...</span>
+        <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-muted">{{ page_obj.paginator.num_pages }}</a>
+      {% elif page_obj.number < page_obj.paginator.num_pages|add:'-2' %}
+        <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-muted">{{ page_obj.paginator.num_pages }}</a>
+      {% endif %}
+      <a href="?page={{ page_obj.next_page_number }}" class="btn btn-primary">>></a>
+    {% endif %}
+  </span>
 </div>
 {% endblock content %}
 
@@ -62,6 +92,7 @@
 
   const cultivos_dic = {{ cultivos|safe }};
   const total_colors = Object.keys(cultivos_dic).length;
+  const total_camas = {{ object_list.first.camas }};
   const base_hue = Math.floor(360/total_colors);
 
   const month_height = 48;
@@ -76,6 +107,10 @@
         `--rainbow-color: ${i*base_hue};` +
     `}`;
   }
+  style.innerHTML += '.week.week-line {' +
+    `width: calc(100% * ${total_camas+1});` +
+    '}';
+
   document.getElementsByTagName('head')[0].appendChild(style);
 
   //calculates position of the date axis in the table for a block
@@ -118,16 +153,16 @@
       months_column.append(
         '<div id="month-' + month[1] + '" class="col row-header text-center text-vert-center" style="position:relative">' +
             '<span>' + month[0] + '</span>' +
-            '<div class="week week-1 border-bottom border-success"></div>' +
-            '<div class="week week-2 border-bottom border-success"></div>' +
-            '<div class="week week-3 border-bottom border-success"></div>' +
-            '<div class="week week-4 border-bottom border-secondary"></div>' +
+            '<div class="week week-1 week-line border-bottom border-success"></div>' +
+            '<div class="week week-2 week-line border-bottom border-success"></div>' +
+            '<div class="week week-3 week-line border-bottom border-success"></div>' +
+            '<div class="week week-4 week-line border-bottom border-secondary"></div>' +
           '</div>'
       );
     }
 
     // adds all blocks of the sector to the table
-    {% for bloque in campo.sectores.first.bloques.all %}
+    {% for bloque in object_list.first.bloques.all %}
       var sector = $("#cama-{{ bloque.cama|add:1 }}");
       var day = '{{ bloque.dia_plantacion|date:"Y/m/d" }}';
       var start_date = block_date(day);

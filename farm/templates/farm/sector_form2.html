@@ -49,9 +49,13 @@
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
 <script type='text/javascript'>
+    //update element index
     function updateElementIndex(el, prefix, ndx) {
+        //id regex = (form-#)
         var id_regex = new RegExp('(' + prefix + '-\\d+)');
+        //replace for different number
         var replacement = prefix + '-' + ndx;
+        //replace either attribute for, name or id with replacement
         if ($(el).attr("for")) $(el).attr("for", $(el).attr("for").replace(id_regex, replacement));
         if (el.id) el.id = el.id.replace(id_regex, replacement);
         if (el.name) el.name = el.name.replace(id_regex, replacement);

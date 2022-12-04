@@ -14,6 +14,7 @@ urlpatterns = [
     # path('sector_form/create/', views.SectorFormView.as_view(), name='sector_form'),
     # path('sector_form/update/<int:pk>', views.SectorFormView.as_view(), name='sector_form'),
     path('cronograma/', views.CronogramaView.as_view(), name='cronograma'),
+    path('post_test/', views.PostTestView.as_view(), name='post_test'),
     path('mi_usuario/', views.MiUsuarioView.as_view(), name='mi_usuario'),
     #re_path(r'^.*\.*', views.pages, name='pages'),
 ]

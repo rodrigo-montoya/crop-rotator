@@ -1,6 +1,7 @@
 from django import forms
 from django.forms import BaseModelForm, BaseModelFormSet, formset_factory, inlineformset_factory, modelformset_factory
 from django.forms.models import BaseInlineFormSet
+from django.http import HttpResponse
 
 from .models import Campo, Sector, FamiliaBotanica, Cultivo, Bloque
 
@@ -11,8 +12,19 @@ class CampoForm(forms.ModelForm):
         fields = ['field_name', 'delta']
 
 
+class BaseSectorFormSet(BaseModelFormSet):
+    def clean(self):
+        i = 1
+        for form in self.forms:
+            if 'camas' not in form.cleaned_data:
+                msg = f'El sector {i} debe tener al menos una cama'
+                form.add_error('camas', msg)
+            i += 1
+
+
 SectorFormSet = modelformset_factory(
     Sector,
+    formset=BaseSectorFormSet,
     fields=('camas',),
     extra=1,
     labels = {
@@ -59,9 +71,21 @@ class CultivoForm(forms.ModelForm):
             })
         }
 
+class BaseBlockFormSet(BaseModelFormSet):
+    def clean(self):
+        i = 1
+        for form in self.forms:
+            if 'dia_plantacion' not in form.cleaned_data:
+                form.add_error('dia_plantacion', f'Debe ingresar un dia de plantacion en el bloque {i}')
+            if 'tiempo_crecimiento' not in form.cleaned_data:
+                form.add_error('tiempo_crecimiento', f'Debe ingresar el tiempo de crecimiento del cultivo en el bloque {i}')
+            if 'camas_requeridas' not in form.cleaned_data:
+                form.add_error('camas_requeridas', f'Debe ingresar la cantidad de camas requeridas en el bloque {i}')
+            i += 1
 
 BloquesFormset = modelformset_factory(
     Bloque,
+    formset=BaseBlockFormSet,
     fields=('dia_plantacion', 'tiempo_crecimiento', 'camas_requeridas',),
     extra=1,
     widgets={
@@ -69,7 +93,15 @@ BloquesFormset = modelformset_factory(
             'class': 'form-control',
             'placeholder': 'ingrese fecha de plantacion',
             'type': 'date',
-        })
+        }),
+        'tiempo_crecimiento': forms.NumberInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'tiempo crecimiento del cultivo',
+        }),
+        'camas_requeridas': forms.NumberInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'camas requeridas del bloque',
+        }),
     }
 )
 
