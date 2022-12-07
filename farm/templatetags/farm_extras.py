@@ -15,3 +15,7 @@ def add_days(value, days):
 @register.filter
 def active(things, active=True):
     return things.filter(active=active)
+
+@register.filter
+def chosen(things, chosen=True):
+    return things.filter(chosen=chosen)

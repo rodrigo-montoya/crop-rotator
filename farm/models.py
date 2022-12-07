@@ -1,13 +1,13 @@
 from django.db import models
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User
 
 # Create your models here.
 # class User(AbstractUser):
 #     pass
 
 class Campo(models.Model):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="campos")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="campos")
     field_name = models.CharField(max_length=64)
     delta = models.IntegerField()
 
@@ -21,7 +21,7 @@ class Sector(models.Model):
     active = models.BooleanField(default=True)
 
     def __str__(self):
-        return str(self.sector_num)
+        return str(self.field) + ' ' + str(self.sector_num)
 
     # class meta:
     #     unique_together = ('field', 'sector_num')
@@ -51,6 +51,7 @@ class Bloque(models.Model):
     sector = models.ForeignKey(Sector, on_delete=models.CASCADE, related_name="bloques", null=True, blank=True)
     cama = models.IntegerField(default=-1)
     active = models.BooleanField(default=True)
+    chosen = models.BooleanField(default=False)
     bloque_num = models.IntegerField()
 
     def __str__(self):

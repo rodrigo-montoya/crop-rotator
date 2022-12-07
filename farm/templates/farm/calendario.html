@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Dashboard {% endblock %}
+{% block title %} calendario {% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}
@@ -8,35 +8,45 @@
 {% endblock stylesheets %}
 
 {% block content %}
-<h2>Sector {{ page_obj.number }}</h2>
 
 <div>
-  <table class="table table-fixed-layout border border-success">
-    <thead>
-      <tr>
-        <th scope="col" class="text-center text-break">Fecha\Camas</th>
-        {% if object_list.first %}
-          {% for cama in object_list.first.camas|times %}
-            <th scope="col" class="text-center">
-              {{ cama }}
+  <div class="card">
+    <div class="card-header card-header-primary">
+      <h2 class="card-title">Calendario</h2>
+      <p class="card-category h3">Sector {{ page_obj.number }}</p>
+    </div>
+    <div class="card-body">
+      <table class="table table-fixed-layout border border-success">
+        <thead>
+          <tr>
+            <th scope="col" class="text-center text-break">Fecha\Camas</th>
+            {% if object_list.first %}
+              {% for cama in object_list.first.camas|times %}
+                <th scope="col" class="text-center border-left">
+                  {{ cama }}
+                </th>
+              {% endfor %}
+            {% endif %}
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th id="months-column" scope="row">
             </th>
-          {% endfor %}
-        {% endif %}
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th id="months-column" scope="row">
-        </th>
-        {% if campo %}
-          {% for cama in campo.sectores.first.camas|times %}
-            <td id="cama-{{ forloop.counter }}" class="align-top">
-            </td>
-          {% endfor %}
-        {% endif %}
-      </tr>
-    </tbody>
-  </table>
+            {% if campo %}
+              {% for cama in object_list.first.camas|times %}
+                <td id="cama-{{ forloop.counter }}" class="align-top border-left border-primary">
+                </td>
+              {% endfor %}
+            {% endif %}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="total-price" class="p-2 h4">
+
+    </div>
+  </div>
 </div>
 
 <div class="pagination justify-content-center">
@@ -160,16 +170,18 @@
           '</div>'
       );
     }
-
+    var total_price = 0;
     // adds all blocks of the sector to the table
-    {% for bloque in object_list.first.bloques.all %}
-      var sector = $("#cama-{{ bloque.cama|add:1 }}");
+    {% if object_list.first %}
+    {% for bloque in object_list.first.bloques|chosen %}
+      total_price += {{ bloque.cultivo.precio_por_cama }} * {{ bloque.camas_requeridas }};
+      var cama = $("#cama-{{ bloque.cama|add:1 }}");
       var day = '{{ bloque.dia_plantacion|date:"Y/m/d" }}';
       var start_date = block_date(day);
       var height = block_height({{ bloque.tiempo_crecimiento }});
       var width = 100*{{ bloque.camas_requeridas }};
       var color = block_color('{{ bloque.cultivo.cultivo_name }}');
-      sector.append(
+      cama.append(
         '<div class="text-left" style="position:relative">' +
           //bloque border border-5 border-success rainbow rainbow-12 tipo-Cátedra nuevo curso-668785
           `<div class="bloque rainbow rainbow-${color} text-break"` +
@@ -181,6 +193,8 @@
         '</div>'
       );
     {% endfor %}
+    {% endif %}
+    $("#total-price").text("ganancias estimadas del sector {{ page_obj.number }}: " + total_price);
 
     $(".bloque").hover(
       function() {
@@ -192,45 +206,45 @@
     );
   });
 
-  var _diff = new Date() - new Date( '2022-11-11 17:21:14' );
-  function line() {
-    var d = new Date( new Date() - _diff );
-    var h = d.getHours();
+  // var _diff = new Date() - new Date( '2022-11-11 17:21:14' );
+  // function line() {
+  //   var d = new Date( new Date() - _diff );
+  //   var h = d.getHours();
 
-    var min = $('div.hora:first-child').data( 'h' );
-    var max = $('div.hora:last-child').data( 'h' );
+  //   var min = $('div.hora:first-child').data( 'h' );
+  //   var max = $('div.hora:last-child').data( 'h' );
 
-    $line = $('#line');
-    if( ! d.getDay() || h < min || max < h ) {
-      $line.hide();
-      return;
-    }
+  //   $line = $('#line');
+  //   if( ! d.getDay() || h < min || max < h ) {
+  //     $line.hide();
+  //     return;
+  //   }
 
-    var p = $('.dhorario tbody td:first-child');
-    var m = d.getMinutes();
-    var t = Math.round( ( ( h - min )*60 + m ) * p.height() / ( (max - min + 1 )*60 ) );
+  //   var p = $('.dhorario tbody td:first-child');
+  //   var m = d.getMinutes();
+  //   var t = Math.round( ( ( h - min )*60 + m ) * p.height() / ( (max - min + 1 )*60 ) );
 
-    if( ! $('#line').size() ) {
-      var left = Math.round( $('.dhorario tbody td:nth-child('+(d.getDay()+1)+')').offset().left );
-      $line = $( '<div id="line" class="reloj"><span></span><div id="circle"></div></div>' );
-      p.append( $line );
-      $line.find( 'div' ).css( 'left', left - $line.offset().left + 20 );
-    }
+  //   if( ! $('#line').size() ) {
+  //     var left = Math.round( $('.dhorario tbody td:nth-child('+(d.getDay()+1)+')').offset().left );
+  //     $line = $( '<div id="line" class="reloj"><span></span><div id="circle"></div></div>' );
+  //     p.append( $line );
+  //     $line.find( 'div' ).css( 'left', left - $line.offset().left + 20 );
+  //   }
 
-    $line.find( 'span' ).html( ( h < 10 ? '0' : '' )+h+':'+( m < 10 ? '0' : '' )+m );
-    $line.css( 'top', t+'px' ).show();
-  }
+  //   $line.find( 'span' ).html( ( h < 10 ? '0' : '' )+h+':'+( m < 10 ? '0' : '' )+m );
+  //   $line.css( 'top', t+'px' ).show();
+  // }
 
-  $( function() {
-    line();
-    setInterval( line, 60 * 1000 ); // cada 1 min
-  } );
+  // $( function() {
+  //   line();
+  //   setInterval( line, 60 * 1000 ); // cada 1 min
+  // } );
 
-  function updVisibles() {
-    $( 'input[data-tipo]' ).each( function() {
-      el = $( this );
-      if( ! el.is(":checked") ) $( 'div.'+el.data('tipo') ).hide();
-    } );
-  }
+  // function updVisibles() {
+  //   $( 'input[data-tipo]' ).each( function() {
+  //     el = $( this );
+  //     if( ! el.is(":checked") ) $( 'div.'+el.data('tipo') ).hide();
+  //   } );
+  // }
   </script>
 {% endblock javascripts %}

@@ -13,6 +13,7 @@ from farm.models import (
 class CampoAdmin(admin.ModelAdmin):
     list_display = (
         "id",
+        "user",
         "field_name",
         "delta"
     )
@@ -49,6 +50,7 @@ class BloqueAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "cultivo",
+        "bloque_num",
         "dia_plantacion",
         "tiempo_crecimiento",
         "camas_requeridas",
@@ -56,6 +58,6 @@ class BloqueAdmin(admin.ModelAdmin):
         #"dia_finalizar",
         "sector",
         "cama",
-        "bloque_num",
         "active",
+        "chosen"
     )

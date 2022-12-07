@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Page User {% endblock %}
+{% block title %} mis cultivos {% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}
@@ -55,7 +55,7 @@
           {% endfor %}
           <div class="row spacer">
             <div class="col-4 offset-2">
-              <button type="submit" class="btn btn-block btn-primary">Save</button>
+              <button type="submit" class="btn btn-block btn-primary">Registrar</button>
             </div>
           </div>
         </form>
@@ -82,6 +82,9 @@
         {% endif %}
       {% endfor %}
     {% endif %}
+
+    //make all inputs required
+    $('input').prop('required', true);
   });
 
   //update element index

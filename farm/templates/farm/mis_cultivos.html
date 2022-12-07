@@ -1,13 +1,26 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} UI Tables {% endblock %}
+{% block title %} mis cultivos {% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
-
-<a href="{% url 'farm:mis_cultivos_create' %}" class="btn btn-primary btn-round">Registrar nuevo cultivo</a>
+<div id="alert_message">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+<div>
+    <a href="{% url 'farm:mis_cultivos_create' %}" class="btn btn-primary btn-round">Registrar nuevo cultivo</a>
+    <form class="d-inline" method="post">{% csrf_token %}
+        <input id="create_calendar" class="btn btn-primary btn-round" type="submit" value="crear calendario">
+    </form>
+</div>
 
 <div class="row">
     {% for cultivo in object_list %}
@@ -24,7 +37,7 @@
                 </div>
                 <div class="card-footer justify-content-end">
                     <div class="stats ">
-                        <a href="{% url 'farm:mis_cultivos_update' pk=cultivo.id %}" class="btn btn-primary btn-round">update</a>
+                        <a href="{% url 'farm:mis_cultivos_update' pk=cultivo.id %}" class="btn btn-primary btn-round">Editar</a>
                     </div>
                 </div>
             </div>
@@ -35,4 +48,13 @@
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->
-{% block javascripts %}{% endblock javascripts %}
+{% block javascripts %}
+<script type='text/javascript'>
+
+
+    $(document).on('click', '#create_calendar', function(e){
+        $('#alert_message').html('esto puede tomar varios minutos, por favor espere...');
+        $('#alert_message').addClass('alert alert-success');
+    });
+</script>
+{% endblock javascripts %}

@@ -27,11 +27,17 @@ from .serializers import BloqueSerializer, SectorSerializer
 
 import requests
 import json
+from datetime import date
 
 
 @login_required(login_url="/accounts/login/")
 def index(request):
-    context = {'segment': 'inicio'}
+    filter_year = None
+    if date.today().month < 9:
+        filter_year = date.today().year
+    else:
+        filter_year = date.today().year + 1
+    context = {'segment': 'inicio', 'filter_year': filter_year}
 
     html_template = loader.get_template('farm/inicio.html')
     return HttpResponse(html_template.render(context, request))
@@ -43,14 +49,14 @@ class MiHuertaView(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         context['segment'] = 'mi_huerta'
         context['campo_exists'] = False
-        campo_exists = Campo.objects.exists()
+        campo_exists = Campo.objects.filter(user=self.request.user).exists()
         if campo_exists:
             context['campo_exists'] = True
-            context['campo'] = Campo.objects.first()
+            context['campo'] = Campo.objects.filter(user=self.request.user).first()
         return context
 
 class HuertaCreateUpdateView(LoginRequiredMixin, CreateOrUpdateView):
-    template_name = "farm/sector_form.html"
+    template_name = "farm/campo_form.html"
     model = Campo
     fields = ['field_name', 'delta']
     sector_form = forms.SectorFormSet
@@ -84,7 +90,9 @@ class HuertaCreateUpdateView(LoginRequiredMixin, CreateOrUpdateView):
     def form_valid(self, form):
         formset = self.sector_form(self.request.POST)
         if form.is_valid() and formset.is_valid():
-            campo = form.save()
+            campo = form.save(commit=False)
+            campo.user = self.request.user
+            campo.save()
             all_sectors = Sector.objects.filter(field=campo)
             all_sectors.update(active=False)
             total_sectors = all_sectors.count()
@@ -110,10 +118,45 @@ class MisCultivosView(LoginRequiredMixin, ListView):
     template_name = "farm/mis_cultivos.html"
     model = Cultivo
 
+    def get_queryset(self):
+        return Cultivo.objects.filter(campo__user=self.request.user)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['segment'] = 'mis_cultivos'
         return context
+
+    def post(self, request, *args, **kwargs):
+        campo = Campo.objects.filter(user=self.request.user).first()
+        bloques = Bloque.objects.filter(cultivo__campo=campo)
+        bloques.update(cama=-1, sector=None, chosen=False)
+        the_month = date.today().month
+        filter_year = None
+        if the_month < 9:
+            filter_year = date.today().year
+        else:
+            filter_year = date.today().year + 1
+        bloques = bloques.filter(
+            active=True,
+            dia_plantacion__gte=date(filter_year, 9, 1),
+            dia_plantacion__lt=date(filter_year+1, 8, 31)
+        )
+        bloques_json = BloqueSerializer(bloques, many=True).data
+        sectores_json = SectorSerializer(Sector.objects.filter(field=campo, active=True), many=True).data
+        other_page_response = requests.post(
+            'http://optimizer:5000/', json = {'sectores': sectores_json, 'bloques': bloques_json}
+        )
+        if not json.loads(other_page_response.json()):
+            messages.warning(request, 'asegurese de crear una huerta y registrar cultivos')
+            return HttpResponseRedirect(reverse('farm:mis_cultivos'))
+        for bloque in json.loads(other_page_response.json()):
+            bloque_instance = Bloque.objects.get(id=bloque['id'])
+            bloque_instance.sector = Sector.objects.get(id=bloque['sector'])
+            bloque_instance.cama = bloque['cama']
+            bloque_instance.chosen = True
+            bloque_instance.save()
+
+        return HttpResponseRedirect(reverse('farm:calendario'))
 
 
 class MisCultivosCreateUpdateView(LoginRequiredMixin, CreateOrUpdateView):
@@ -142,10 +185,10 @@ class MisCultivosCreateUpdateView(LoginRequiredMixin, CreateOrUpdateView):
         formset = self.bloque_form(self.request.POST)
         if form.is_valid() and formset.is_valid():
             cultivo = form.save(commit=False)
-            cultivo.campo = Campo.objects.first()
+            cultivo.campo = Campo.objects.filter(user=self.request.user).first()
             cultivo.save()
             all_bloques = Bloque.objects.filter(cultivo=cultivo)
-            all_bloques.update(active=False)
+            all_bloques.update(active=False, cama=-1, sector=None, chosen=False)
             total_bloques = all_bloques.count()
             counter = 0
             for bloque in formset:
@@ -168,18 +211,18 @@ class MisCultivosCreateUpdateView(LoginRequiredMixin, CreateOrUpdateView):
             return HttpResponse(formset.errors)
 
 
-class CronogramaView(LoginRequiredMixin, ListView):
+class CalendarioView(LoginRequiredMixin, ListView):
     model = Sector
     paginate_by = 1
-    template_name = "farm/cronograma.html"
+    template_name = "farm/calendario.html"
 
     def get_queryset(self):
-        return Sector.objects.filter(field=Campo.objects.first(), active=True).order_by('sector_num')
+        return Sector.objects.filter(field=Campo.objects.filter(user=self.request.user).first(), active=True).order_by('sector_num')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['segment'] = 'cronograma'
-        campo = Campo.objects.first()
+        context['segment'] = 'calendario'
+        campo = Campo.objects.filter(user=self.request.user).first()
         context['campo'] = campo
         cultivos = Cultivo.objects.filter(campo=campo)
         context['cultivos'] = {}
@@ -190,40 +233,40 @@ class CronogramaView(LoginRequiredMixin, ListView):
         return context
 
 
-class PostTestView(LoginRequiredMixin, TemplateView):
-    template_name = "farm/post_test.html"
+# class PostTestView(LoginRequiredMixin, TemplateView):
+#     template_name = "farm/post_test.html"
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     campo = Campo.objects.first()
-    #     bloques_json = BloqueSerializer(Bloque.objects.filter(cultivo__campo=campo), many=True).data
-    #     sectores_json = SectorSerializer(Sector.objects.filter(field=campo), many=True).data
-    #     other_page_response = requests.post(
-    #         'http://optimizer:5000/', json = {'sectores': sectores_json, 'bloques': bloques_json}
-    #     )
-    #     context['other_page_response'] = other_page_response.json()
-    #     return context
+#     # def get_context_data(self, **kwargs):
+#     #     context = super().get_context_data(**kwargs)
+#     #     campo = Campo.objects.first()
+#     #     bloques_json = BloqueSerializer(Bloque.objects.filter(cultivo__campo=campo), many=True).data
+#     #     sectores_json = SectorSerializer(Sector.objects.filter(field=campo), many=True).data
+#     #     other_page_response = requests.post(
+#     #         'http://optimizer:5000/', json = {'sectores': sectores_json, 'bloques': bloques_json}
+#     #     )
+#     #     context['other_page_response'] = other_page_response.json()
+#     #     return context
 
-    def post(self, request, *args, **kwargs):
-        campo = Campo.objects.first()
-        bloques_json = BloqueSerializer(Bloque.objects.filter(cultivo__campo=campo), many=True).data
-        sectores_json = SectorSerializer(Sector.objects.filter(field=campo), many=True).data
-        other_page_response = requests.post(
-            'http://optimizer:5000/', json = {'sectores': sectores_json, 'bloques': bloques_json}
-        )
-        bloque_instances = []
-        for bloque in json.loads(other_page_response.json()):
-            bloque_instance = Bloque.objects.get(id=bloque['id'])
-            bloque_instance.sector = Sector.objects.get(id=bloque['sector'])
-            bloque_instance.cama = bloque['cama']
-            bloque_instance.save()
-            bloque_instances.append(bloque_instance)
-        serializer = BloqueSerializer(bloque_instances, many=True)
+#     def post(self, request, *args, **kwargs):
+#         campo = Campo.objects.first()
+#         bloques_json = BloqueSerializer(Bloque.objects.filter(cultivo__campo=campo), many=True).data
+#         sectores_json = SectorSerializer(Sector.objects.filter(field=campo), many=True).data
+#         other_page_response = requests.post(
+#             'http://optimizer:5000/', json = {'sectores': sectores_json, 'bloques': bloques_json}
+#         )
+#         bloque_instances = []
+#         for bloque in json.loads(other_page_response.json()):
+#             bloque_instance = Bloque.objects.get(id=bloque['id'])
+#             bloque_instance.sector = Sector.objects.get(id=bloque['sector'])
+#             bloque_instance.cama = bloque['cama']
+#             bloque_instance.save()
+#             bloque_instances.append(bloque_instance)
+#         serializer = BloqueSerializer(bloque_instances, many=True)
 
-        messages.success(request, serializer.data)
-        # messages.success(request, bloque_instances)
+#         messages.success(request, serializer.data)
+#         # messages.success(request, bloque_instances)
 
-        return HttpResponseRedirect(reverse('farm:post_test'))
+#         return HttpResponseRedirect(reverse('farm:post_test'))
 
 
 class BloqueApiView(viewsets.ModelViewSet):
@@ -243,6 +286,7 @@ class MiUsuarioView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['segment'] = 'mi_usuario'
+        context['current_user'] = self.request.user
         return context
 
 
