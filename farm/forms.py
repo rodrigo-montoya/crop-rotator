@@ -60,6 +60,9 @@ class CultivoForm(forms.ModelForm):
     class Meta:
         model = Cultivo
         fields = ['cultivo_name', 'familia_botanica', 'precio_por_cama']
+        labels = {
+            'cultivo_name': 'Nombre del cultivo',
+        }
         widgets = {
             'cultivo_name': forms.TextInput(attrs={
                 'class': 'form-control',

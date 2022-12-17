@@ -194,7 +194,7 @@
       );
     {% endfor %}
     {% endif %}
-    $("#total-price").text("ganancias estimadas del sector {{ page_obj.number }}: " + total_price);
+    $("#total-price").text("ganancias estimadas del sector {{ page_obj.number }}: $" + total_price.toLocaleString('es-CL'));
 
     $(".bloque").hover(
       function() {

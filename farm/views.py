@@ -65,7 +65,8 @@ class HuertaCreateUpdateView(LoginRequiredMixin, CreateOrUpdateView):
         form = super().get_form(form_class)
         form.fields['field_name'].widget = django_forms.TextInput(attrs={
             'class': 'form-control',
-            'placeholder': 'Nombre del campo'})
+            'placeholder': 'Nombre de Huerta'})
+        form.fields['field_name'].label = 'Nombre de Huerta'
         form.fields['delta'].widget = django_forms.NumberInput(attrs={
             'class': 'form-control',
             'placeholder': 'dias requeridos entre cultivos de la misma familia botanica'})
