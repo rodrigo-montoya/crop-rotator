@@ -62,6 +62,7 @@ class CultivoForm(forms.ModelForm):
         fields = ['cultivo_name', 'familia_botanica', 'precio_por_cama']
         labels = {
             'cultivo_name': 'Nombre del cultivo',
+            'precio_por_cama': 'valor por cama',
         }
         widgets = {
             'cultivo_name': forms.TextInput(attrs={
@@ -70,7 +71,7 @@ class CultivoForm(forms.ModelForm):
             }),
             'precio_por_cama': forms.NumberInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'precio por cama'
+                'placeholder': 'valor por cama'
             })
         }
 
@@ -90,6 +91,10 @@ BloquesFormset = modelformset_factory(
     Bloque,
     formset=BaseBlockFormSet,
     fields=('dia_plantacion', 'tiempo_crecimiento', 'camas_requeridas',),
+    labels={
+        'dia_plantacion': 'Fecha de plantacion',
+        'tiempo_crecimiento': 'Tiempo de crecimiento (dias)',
+    },
     extra=1,
     widgets={
         'dia_plantacion': forms.NumberInput(attrs={
@@ -99,7 +104,7 @@ BloquesFormset = modelformset_factory(
         }),
         'tiempo_crecimiento': forms.NumberInput(attrs={
             'class': 'form-control',
-            'placeholder': 'tiempo crecimiento del cultivo',
+            'placeholder': 'tiempo crecimiento del cultivo en dias',
         }),
         'camas_requeridas': forms.NumberInput(attrs={
             'class': 'form-control',

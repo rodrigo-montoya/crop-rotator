@@ -400,7 +400,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$390000$B4RT2kCQcSf6lfy4pIVrEP$OVqLKykWJ9JjxdAx/swwdvuJrugAr0le3GoJGauFUn4=",
-    "last_login": "2022-12-07T04:46:54.294Z",
+    "last_login": "2022-12-18T04:23:04.481Z",
     "is_superuser": true,
     "username": "rodrigo",
     "first_name": "",
@@ -510,12 +510,20 @@
   }
 },
 {
+  "model": "sessions.session",
+  "pk": "jqsyo11v2j2tkmb59qx399hecv505ji1",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSG8KS7d-w1kYAapGkhKuzL-uzbpQrf3nHNfLMK21rgNWuKM7MwkO_1uCfKD2g7wDu3Wee5tXebEd4UfdPBrR3peDvfvoMKo31pZXSg4QCkCKFDJu8koB1CUCMZZzFZTDooKOemnAOit11ZoSiUJE9j7A9qBN6s:1p6lCa:FaNS0BLggOG-M6O8sWn-QC4NzxWYskXMsN-Rnh__WUw",
+    "expire_date": "2023-01-01T04:23:04.504Z"
+  }
+},
+{
   "model": "farm.campo",
   "pk": 1,
   "fields": {
     "user": 1,
     "field_name": "huerta meli",
-    "delta": 30
+    "delta": 28
   }
 },
 {
@@ -565,7 +573,7 @@
     "field": 1,
     "sector_num": 5,
     "camas": 10,
-    "active": true
+    "active": false
   }
 },
 {
@@ -639,12 +647,61 @@
   }
 },
 {
+  "model": "farm.familiabotanica",
+  "pk": 11,
+  "fields": {
+    "familia_name": "amaryllidaceae"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 12,
+  "fields": {
+    "familia_name": "apiaceae"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 13,
+  "fields": {
+    "familia_name": "brassicaceae"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 14,
+  "fields": {
+    "familia_name": "asteraceae"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 15,
+  "fields": {
+    "familia_name": "cucurbitaceae"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 16,
+  "fields": {
+    "familia_name": "fabaceae"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 17,
+  "fields": {
+    "familia_name": "amaranthaceae"
+  }
+},
+{
   "model": "farm.cultivo",
   "pk": 1,
   "fields": {
     "campo": 1,
     "cultivo_name": "lechuga",
-    "familia_botanica": 1,
+    "familia_botanica": 14,
     "precio_por_cama": 225000
   }
 },
@@ -654,7 +711,7 @@
   "fields": {
     "campo": 1,
     "cultivo_name": "cilantro",
-    "familia_botanica": 2,
+    "familia_botanica": 12,
     "precio_por_cama": 140000
   }
 },
@@ -664,7 +721,7 @@
   "fields": {
     "campo": 1,
     "cultivo_name": "betarraga",
-    "familia_botanica": 3,
+    "familia_botanica": 17,
     "precio_por_cama": 180000
   }
 },
@@ -674,7 +731,7 @@
   "fields": {
     "campo": 1,
     "cultivo_name": "brasicas",
-    "familia_botanica": 4,
+    "familia_botanica": 13,
     "precio_por_cama": 368000
   }
 },
@@ -684,7 +741,7 @@
   "fields": {
     "campo": 1,
     "cultivo_name": "rucula",
-    "familia_botanica": 5,
+    "familia_botanica": 13,
     "precio_por_cama": 112000
   }
 },
@@ -694,7 +751,7 @@
   "fields": {
     "campo": 1,
     "cultivo_name": "rabanito",
-    "familia_botanica": 6,
+    "familia_botanica": 13,
     "precio_por_cama": 270000
   }
 },
@@ -704,7 +761,7 @@
   "fields": {
     "campo": 1,
     "cultivo_name": "acelga",
-    "familia_botanica": 7,
+    "familia_botanica": 17,
     "precio_por_cama": 113000
   }
 },
@@ -714,7 +771,7 @@
   "fields": {
     "campo": 1,
     "cultivo_name": "cebollin",
-    "familia_botanica": 8,
+    "familia_botanica": 11,
     "precio_por_cama": 125000
   }
 },
@@ -724,7 +781,7 @@
   "fields": {
     "campo": 1,
     "cultivo_name": "zuchini",
-    "familia_botanica": 9,
+    "familia_botanica": 15,
     "precio_por_cama": 112000
   }
 },
@@ -734,8 +791,58 @@
   "fields": {
     "campo": 1,
     "cultivo_name": "arveja",
-    "familia_botanica": 10,
+    "familia_botanica": 16,
     "precio_por_cama": 30000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 11,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "mini lechuga",
+    "familia_botanica": 14,
+    "precio_por_cama": 368000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 12,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "puerro",
+    "familia_botanica": 11,
+    "precio_por_cama": 60000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 13,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "zanahoria",
+    "familia_botanica": 12,
+    "precio_por_cama": 225000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 14,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "espinaca",
+    "familia_botanica": 17,
+    "precio_por_cama": 75000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 15,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "perejil",
+    "familia_botanica": 12,
+    "precio_por_cama": 36000
   }
 },
 {
@@ -1261,6 +1368,981 @@
     "active": true,
     "chosen": false,
     "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 36,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2023-10-22",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 6
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 37,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2024-03-21",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 7
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 38,
+  "fields": {
+    "cultivo": 11,
+    "dia_plantacion": "2024-03-16",
+    "tiempo_crecimiento": 84,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 39,
+  "fields": {
+    "cultivo": 3,
+    "dia_plantacion": "2023-12-14",
+    "tiempo_crecimiento": 69,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 40,
+  "fields": {
+    "cultivo": 3,
+    "dia_plantacion": "2024-01-11",
+    "tiempo_crecimiento": 69,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 4
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 41,
+  "fields": {
+    "cultivo": 3,
+    "dia_plantacion": "2024-03-09",
+    "tiempo_crecimiento": 69,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 5
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 42,
+  "fields": {
+    "cultivo": 12,
+    "dia_plantacion": "2023-12-14",
+    "tiempo_crecimiento": 113,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 43,
+  "fields": {
+    "cultivo": 13,
+    "dia_plantacion": "2023-09-30",
+    "tiempo_crecimiento": 90,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 44,
+  "fields": {
+    "cultivo": 13,
+    "dia_plantacion": "2023-12-12",
+    "tiempo_crecimiento": 90,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 45,
+  "fields": {
+    "cultivo": 4,
+    "dia_plantacion": "2023-09-15",
+    "tiempo_crecimiento": 42,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 6
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 46,
+  "fields": {
+    "cultivo": 4,
+    "dia_plantacion": "2023-10-20",
+    "tiempo_crecimiento": 42,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 7
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 47,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2023-11-03",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 7
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 48,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2023-11-05",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 7
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 49,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2024-02-23",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 8
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 50,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2023-10-29",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 8
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 51,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2024-01-14",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 9
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 52,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2024-04-04",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 10
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 53,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2023-11-19",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 7
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 54,
+  "fields": {
+    "cultivo": 8,
+    "dia_plantacion": "2024-03-08",
+    "tiempo_crecimiento": 74,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 55,
+  "fields": {
+    "cultivo": 11,
+    "dia_plantacion": "2023-11-24",
+    "tiempo_crecimiento": 84,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 56,
+  "fields": {
+    "cultivo": 9,
+    "dia_plantacion": "2023-12-18",
+    "tiempo_crecimiento": 110,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 57,
+  "fields": {
+    "cultivo": 13,
+    "dia_plantacion": "2023-10-21",
+    "tiempo_crecimiento": 90,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 58,
+  "fields": {
+    "cultivo": 13,
+    "dia_plantacion": "2024-02-28",
+    "tiempo_crecimiento": 90,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 4
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 59,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2023-09-15",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 8
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 60,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2023-10-13",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 9
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 61,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2023-09-10",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 9
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 62,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2024-02-09",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 10
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 63,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2024-04-13",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 11
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 64,
+  "fields": {
+    "cultivo": 10,
+    "dia_plantacion": "2023-09-05",
+    "tiempo_crecimiento": 66,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 65,
+  "fields": {
+    "cultivo": 10,
+    "dia_plantacion": "2024-01-26",
+    "tiempo_crecimiento": 66,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 66,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2023-10-01",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 11
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 67,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2023-11-12",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 12
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 68,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2024-01-31",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 13
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 69,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2024-03-14",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 14
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 70,
+  "fields": {
+    "cultivo": 14,
+    "dia_plantacion": "2024-03-23",
+    "tiempo_crecimiento": 56,
+    "camas_requeridas": 4,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 71,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2023-09-10",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 8
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 72,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2023-10-01",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 9
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 73,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2024-01-26",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 10
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 74,
+  "fields": {
+    "cultivo": 11,
+    "dia_plantacion": "2024-01-19",
+    "tiempo_crecimiento": 84,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 75,
+  "fields": {
+    "cultivo": 3,
+    "dia_plantacion": "2023-12-29",
+    "tiempo_crecimiento": 69,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 6
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 76,
+  "fields": {
+    "cultivo": 4,
+    "dia_plantacion": "2023-11-17",
+    "tiempo_crecimiento": 42,
+    "camas_requeridas": 4,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 8
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 77,
+  "fields": {
+    "cultivo": 4,
+    "dia_plantacion": "2023-12-15",
+    "tiempo_crecimiento": 42,
+    "camas_requeridas": 4,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 9
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 78,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2023-12-22",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 10
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 79,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2023-10-08",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 12
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 80,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2023-12-24",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 13
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 81,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2024-03-23",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 14
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 82,
+  "fields": {
+    "cultivo": 10,
+    "dia_plantacion": "2023-10-03",
+    "tiempo_crecimiento": 66,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 4
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 83,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2023-12-24",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 15
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 84,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2024-01-19",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 16
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 85,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2023-09-24",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 11
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 86,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2024-02-02",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 12
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 87,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2024-03-16",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 13
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 88,
+  "fields": {
+    "cultivo": 15,
+    "dia_plantacion": "2023-09-23",
+    "tiempo_crecimiento": 125,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 89,
+  "fields": {
+    "cultivo": 3,
+    "dia_plantacion": "2023-09-30",
+    "tiempo_crecimiento": 69,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 7
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 90,
+  "fields": {
+    "cultivo": 12,
+    "dia_plantacion": "2023-11-02",
+    "tiempo_crecimiento": 113,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 91,
+  "fields": {
+    "cultivo": 12,
+    "dia_plantacion": "2023-11-16",
+    "tiempo_crecimiento": 113,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 92,
+  "fields": {
+    "cultivo": 4,
+    "dia_plantacion": "2024-02-09",
+    "tiempo_crecimiento": 42,
+    "camas_requeridas": 4,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 10
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 93,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2023-11-24",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 11
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 94,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2023-12-29",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 12
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 95,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2024-03-17",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 13
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 96,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2023-11-26",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 15
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 97,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2023-12-10",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 16
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 98,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2024-03-02",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 17
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 99,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2024-03-16",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 18
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 100,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2024-04-06",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 19
   }
 }
 ]

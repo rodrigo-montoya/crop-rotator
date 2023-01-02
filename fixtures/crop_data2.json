@@ -1,0 +1,2341 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2022-12-18T05:41:51.924Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "lechuga 1",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Sector\", \"Cama\", \"Chosen\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2022-12-18T05:44:09.048Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "lechuga 1",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Sector\", \"Cama\", \"Chosen\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2022-12-18T06:55:16.875Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "huerta test",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.512Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "66",
+    "object_repr": "lechuga 11",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.548Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "67",
+    "object_repr": "lechuga 12",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.572Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "68",
+    "object_repr": "lechuga 13",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.598Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "69",
+    "object_repr": "lechuga 14",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.622Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "83",
+    "object_repr": "lechuga 15",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.648Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "84",
+    "object_repr": "lechuga 16",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.672Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "71",
+    "object_repr": "cilantro 8",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.698Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "72",
+    "object_repr": "cilantro 9",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.722Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "73",
+    "object_repr": "cilantro 10",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.748Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "85",
+    "object_repr": "cilantro 11",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.772Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "86",
+    "object_repr": "cilantro 12",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.798Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "87",
+    "object_repr": "cilantro 13",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.822Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "75",
+    "object_repr": "betarraga 6",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.848Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "89",
+    "object_repr": "betarraga 7",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.872Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "76",
+    "object_repr": "brasicas 8",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.898Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "77",
+    "object_repr": "brasicas 9",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.922Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "92",
+    "object_repr": "brasicas 10",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.948Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "78",
+    "object_repr": "rucula 10",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.972Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "93",
+    "object_repr": "rucula 11",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2022-12-18T07:00:06.998Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "94",
+    "object_repr": "rucula 12",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2022-12-18T07:00:07.022Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "95",
+    "object_repr": "rucula 13",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2022-12-18T07:00:07.048Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "79",
+    "object_repr": "rabanito 12",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2022-12-18T07:00:07.073Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "80",
+    "object_repr": "rabanito 13",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2022-12-18T07:00:07.098Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "81",
+    "object_repr": "rabanito 14",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2022-12-18T07:00:07.122Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "96",
+    "object_repr": "rabanito 15",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2022-12-18T07:00:07.148Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "97",
+    "object_repr": "rabanito 16",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2022-12-18T07:00:07.172Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "98",
+    "object_repr": "rabanito 17",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2022-12-18T07:00:07.198Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "99",
+    "object_repr": "rabanito 18",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2022-12-18T07:00:07.222Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "100",
+    "object_repr": "rabanito 19",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2022-12-18T07:00:07.248Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "82",
+    "object_repr": "arveja 4",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2022-12-18T07:00:07.272Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "74",
+    "object_repr": "mini lechuga 3",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2022-12-18T07:00:07.298Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "90",
+    "object_repr": "puerro 2",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2022-12-18T07:00:07.322Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "91",
+    "object_repr": "puerro 3",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2022-12-18T07:00:07.348Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "70",
+    "object_repr": "espinaca 1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2022-12-18T07:00:07.372Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "88",
+    "object_repr": "perejil 1",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2022-12-18T07:01:18.795Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "15",
+    "object_repr": "perejil",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2022-12-18T07:01:18.820Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "14",
+    "object_repr": "espinaca",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add campo",
+    "content_type": 7,
+    "codename": "add_campo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change campo",
+    "content_type": 7,
+    "codename": "change_campo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete campo",
+    "content_type": 7,
+    "codename": "delete_campo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view campo",
+    "content_type": 7,
+    "codename": "view_campo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add familia botanica",
+    "content_type": 8,
+    "codename": "add_familiabotanica"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change familia botanica",
+    "content_type": 8,
+    "codename": "change_familiabotanica"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete familia botanica",
+    "content_type": 8,
+    "codename": "delete_familiabotanica"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view familia botanica",
+    "content_type": 8,
+    "codename": "view_familiabotanica"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add sector",
+    "content_type": 9,
+    "codename": "add_sector"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change sector",
+    "content_type": 9,
+    "codename": "change_sector"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete sector",
+    "content_type": 9,
+    "codename": "delete_sector"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view sector",
+    "content_type": 9,
+    "codename": "view_sector"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add cultivo",
+    "content_type": 10,
+    "codename": "add_cultivo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change cultivo",
+    "content_type": 10,
+    "codename": "change_cultivo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete cultivo",
+    "content_type": 10,
+    "codename": "delete_cultivo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view cultivo",
+    "content_type": 10,
+    "codename": "view_cultivo"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add bloque",
+    "content_type": 11,
+    "codename": "add_bloque"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change bloque",
+    "content_type": 11,
+    "codename": "change_bloque"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete bloque",
+    "content_type": 11,
+    "codename": "delete_bloque"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view bloque",
+    "content_type": 11,
+    "codename": "view_bloque"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$B4RT2kCQcSf6lfy4pIVrEP$OVqLKykWJ9JjxdAx/swwdvuJrugAr0le3GoJGauFUn4=",
+    "last_login": "2022-12-18T06:52:59.476Z",
+    "is_superuser": true,
+    "username": "rodrigo",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-12-07T04:45:18.241Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$SytHbVYQMxIbsz1uOlOhTG$kCx3KMijg7uEGmSIl274G1yWPDkBDp7J33llHYcrsCc=",
+    "last_login": "2022-12-18T06:50:14.958Z",
+    "is_superuser": false,
+    "username": "the_rod",
+    "first_name": "",
+    "last_name": "",
+    "email": "rodrigo.montoyaa@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-18T06:50:01.859Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "farm",
+    "model": "campo"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "farm",
+    "model": "familiabotanica"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "farm",
+    "model": "sector"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "farm",
+    "model": "cultivo"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "farm",
+    "model": "bloque"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "a9x5t78wo1ntthg1xz393p84tneyqc1s",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSG8KS7d-w1kYAapGkhKuzL-uzbpQrf3nHNfLMK21rgNWuKM7MwkO_1uCfKD2g7wDu3Wee5tXebEd4UfdPBrR3peDvfvoMKo31pZXSg4QCkCKFDJu8koB1CUCMZZzFZTDooKOemnAOit11ZoSiUJE9j7A9qBN6s:1p2mKc:gYwAZ-EXckN_N6yIZ3OFsXPrLD1fcjZM8BmjyYWAflM",
+    "expire_date": "2022-12-21T04:46:54.323Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "xxihv45gmn55l47975opbhevhxanvzl3",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSG8KS7d-w1kYAapGkhKuzL-uzbpQrf3nHNfLMK21rgNWuKM7MwkO_1uCfKD2g7wDu3Wee5tXebEd4UfdPBrR3peDvfvoMKo31pZXSg4QCkCKFDJu8koB1CUCMZZzFZTDooKOemnAOit11ZoSiUJE9j7A9qBN6s:1p6nXf:-4j1fFqLJ885532TAMrGXxKnggrFB8cI8c6YEPXwl7o",
+    "expire_date": "2023-01-01T06:52:59.501Z"
+  }
+},
+{
+  "model": "farm.campo",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "field_name": "huerta meli",
+    "delta": 28
+  }
+},
+{
+  "model": "farm.sector",
+  "pk": 1,
+  "fields": {
+    "field": 1,
+    "sector_num": 1,
+    "camas": 10,
+    "active": true
+  }
+},
+{
+  "model": "farm.sector",
+  "pk": 2,
+  "fields": {
+    "field": 1,
+    "sector_num": 2,
+    "camas": 10,
+    "active": true
+  }
+},
+{
+  "model": "farm.sector",
+  "pk": 3,
+  "fields": {
+    "field": 1,
+    "sector_num": 3,
+    "camas": 10,
+    "active": true
+  }
+},
+{
+  "model": "farm.sector",
+  "pk": 4,
+  "fields": {
+    "field": 1,
+    "sector_num": 4,
+    "camas": 10,
+    "active": false
+  }
+},
+{
+  "model": "farm.sector",
+  "pk": 5,
+  "fields": {
+    "field": 1,
+    "sector_num": 5,
+    "camas": 10,
+    "active": false
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 1,
+  "fields": {
+    "familia_name": "lechuga"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 2,
+  "fields": {
+    "familia_name": "cilantro"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 3,
+  "fields": {
+    "familia_name": "betarraga"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 4,
+  "fields": {
+    "familia_name": "brasicas"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 5,
+  "fields": {
+    "familia_name": "rucula"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 6,
+  "fields": {
+    "familia_name": "rabanito"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 7,
+  "fields": {
+    "familia_name": "acelga"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 8,
+  "fields": {
+    "familia_name": "cebollin"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 9,
+  "fields": {
+    "familia_name": "zuchini"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 10,
+  "fields": {
+    "familia_name": "arveja"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 11,
+  "fields": {
+    "familia_name": "amaryllidaceae"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 12,
+  "fields": {
+    "familia_name": "apiaceae"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 13,
+  "fields": {
+    "familia_name": "brassicaceae"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 14,
+  "fields": {
+    "familia_name": "asteraceae"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 15,
+  "fields": {
+    "familia_name": "cucurbitaceae"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 16,
+  "fields": {
+    "familia_name": "fabaceae"
+  }
+},
+{
+  "model": "farm.familiabotanica",
+  "pk": 17,
+  "fields": {
+    "familia_name": "amaranthaceae"
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 1,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "lechuga",
+    "familia_botanica": 14,
+    "precio_por_cama": 225000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 2,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "cilantro",
+    "familia_botanica": 12,
+    "precio_por_cama": 140000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 3,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "betarraga",
+    "familia_botanica": 17,
+    "precio_por_cama": 180000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 4,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "brasicas",
+    "familia_botanica": 13,
+    "precio_por_cama": 368000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 5,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "rucula",
+    "familia_botanica": 13,
+    "precio_por_cama": 112000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 6,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "rabanito",
+    "familia_botanica": 13,
+    "precio_por_cama": 270000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 7,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "acelga",
+    "familia_botanica": 17,
+    "precio_por_cama": 113000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 8,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "cebollin",
+    "familia_botanica": 11,
+    "precio_por_cama": 125000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 9,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "zuchini",
+    "familia_botanica": 15,
+    "precio_por_cama": 112000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 10,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "arveja",
+    "familia_botanica": 16,
+    "precio_por_cama": 30000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 11,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "mini lechuga",
+    "familia_botanica": 14,
+    "precio_por_cama": 368000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 12,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "puerro",
+    "familia_botanica": 11,
+    "precio_por_cama": 60000
+  }
+},
+{
+  "model": "farm.cultivo",
+  "pk": 13,
+  "fields": {
+    "campo": 1,
+    "cultivo_name": "zanahoria",
+    "familia_botanica": 12,
+    "precio_por_cama": 225000
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 1,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2024-02-07",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 2,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2024-02-14",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 3,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2023-10-15",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 4,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2023-10-29",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 5,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2024-01-12",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 6,
+  "fields": {
+    "cultivo": 3,
+    "dia_plantacion": "2023-10-28",
+    "tiempo_crecimiento": 69,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 7,
+  "fields": {
+    "cultivo": 3,
+    "dia_plantacion": "2023-11-25",
+    "tiempo_crecimiento": 69,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 8,
+  "fields": {
+    "cultivo": 4,
+    "dia_plantacion": "2023-10-06",
+    "tiempo_crecimiento": 42,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 9,
+  "fields": {
+    "cultivo": 4,
+    "dia_plantacion": "2023-12-22",
+    "tiempo_crecimiento": 42,
+    "camas_requeridas": 4,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 10,
+  "fields": {
+    "cultivo": 4,
+    "dia_plantacion": "2024-03-02",
+    "tiempo_crecimiento": 42,
+    "camas_requeridas": 4,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 11,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2024-01-26",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 12,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2024-03-10",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 13,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2024-03-24",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 14,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2024-03-31",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 4
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 15,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2023-09-17",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 16,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2024-01-21",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 17,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2024-01-28",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 18,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2024-04-20",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 4
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 19,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2023-09-24",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 20,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2023-12-17",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 4
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 21,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2024-02-28",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 5
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 22,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2023-12-22",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 4
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 23,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2024-01-19",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 5
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 24,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2024-03-23",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 6
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 25,
+  "fields": {
+    "cultivo": 7,
+    "dia_plantacion": "2024-03-15",
+    "tiempo_crecimiento": 71,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 26,
+  "fields": {
+    "cultivo": 8,
+    "dia_plantacion": "2023-10-23",
+    "tiempo_crecimiento": 74,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 27,
+  "fields": {
+    "cultivo": 8,
+    "dia_plantacion": "2023-11-19",
+    "tiempo_crecimiento": 74,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 28,
+  "fields": {
+    "cultivo": 9,
+    "dia_plantacion": "2023-10-08",
+    "tiempo_crecimiento": 110,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 29,
+  "fields": {
+    "cultivo": 4,
+    "dia_plantacion": "2023-09-22",
+    "tiempo_crecimiento": 42,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 4
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 30,
+  "fields": {
+    "cultivo": 4,
+    "dia_plantacion": "2024-02-02",
+    "tiempo_crecimiento": 42,
+    "camas_requeridas": 4,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 5
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 31,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2023-11-10",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 5
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 32,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2023-11-17",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 6
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 33,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2023-10-01",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 5
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 34,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2024-03-09",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 6
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 35,
+  "fields": {
+    "cultivo": 10,
+    "dia_plantacion": "2024-03-20",
+    "tiempo_crecimiento": 66,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 36,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2023-10-22",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 6
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 37,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2024-03-21",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 7
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 38,
+  "fields": {
+    "cultivo": 11,
+    "dia_plantacion": "2024-03-16",
+    "tiempo_crecimiento": 84,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 39,
+  "fields": {
+    "cultivo": 3,
+    "dia_plantacion": "2023-12-14",
+    "tiempo_crecimiento": 69,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 40,
+  "fields": {
+    "cultivo": 3,
+    "dia_plantacion": "2024-01-11",
+    "tiempo_crecimiento": 69,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 4
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 41,
+  "fields": {
+    "cultivo": 3,
+    "dia_plantacion": "2024-03-09",
+    "tiempo_crecimiento": 69,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 5
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 42,
+  "fields": {
+    "cultivo": 12,
+    "dia_plantacion": "2023-12-14",
+    "tiempo_crecimiento": 113,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 43,
+  "fields": {
+    "cultivo": 13,
+    "dia_plantacion": "2023-09-30",
+    "tiempo_crecimiento": 90,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 1
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 44,
+  "fields": {
+    "cultivo": 13,
+    "dia_plantacion": "2023-12-12",
+    "tiempo_crecimiento": 90,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 45,
+  "fields": {
+    "cultivo": 4,
+    "dia_plantacion": "2023-09-15",
+    "tiempo_crecimiento": 42,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 6
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 46,
+  "fields": {
+    "cultivo": 4,
+    "dia_plantacion": "2023-10-20",
+    "tiempo_crecimiento": 42,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 7
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 47,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2023-11-03",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 7
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 48,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2023-11-05",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 7
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 49,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2024-02-23",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 8
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 50,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2023-10-29",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 8
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 51,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2024-01-14",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 9
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 52,
+  "fields": {
+    "cultivo": 1,
+    "dia_plantacion": "2024-04-04",
+    "tiempo_crecimiento": 37,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 10
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 53,
+  "fields": {
+    "cultivo": 2,
+    "dia_plantacion": "2023-11-19",
+    "tiempo_crecimiento": 54,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 7
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 54,
+  "fields": {
+    "cultivo": 8,
+    "dia_plantacion": "2024-03-08",
+    "tiempo_crecimiento": 74,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 55,
+  "fields": {
+    "cultivo": 11,
+    "dia_plantacion": "2023-11-24",
+    "tiempo_crecimiento": 84,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 56,
+  "fields": {
+    "cultivo": 9,
+    "dia_plantacion": "2023-12-18",
+    "tiempo_crecimiento": 110,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 57,
+  "fields": {
+    "cultivo": 13,
+    "dia_plantacion": "2023-10-21",
+    "tiempo_crecimiento": 90,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 3
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 58,
+  "fields": {
+    "cultivo": 13,
+    "dia_plantacion": "2024-02-28",
+    "tiempo_crecimiento": 90,
+    "camas_requeridas": 3,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 4
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 59,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2023-09-15",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 8
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 60,
+  "fields": {
+    "cultivo": 5,
+    "dia_plantacion": "2023-10-13",
+    "tiempo_crecimiento": 28,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 9
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 61,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2023-09-10",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 9
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 62,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2024-02-09",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 10
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 63,
+  "fields": {
+    "cultivo": 6,
+    "dia_plantacion": "2024-04-13",
+    "tiempo_crecimiento": 26,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 11
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 64,
+  "fields": {
+    "cultivo": 10,
+    "dia_plantacion": "2023-09-05",
+    "tiempo_crecimiento": 66,
+    "camas_requeridas": 1,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 2
+  }
+},
+{
+  "model": "farm.bloque",
+  "pk": 65,
+  "fields": {
+    "cultivo": 10,
+    "dia_plantacion": "2024-01-26",
+    "tiempo_crecimiento": 66,
+    "camas_requeridas": 2,
+    "sector": null,
+    "cama": -1,
+    "active": true,
+    "chosen": false,
+    "bloque_num": 3
+  }
+}
+]

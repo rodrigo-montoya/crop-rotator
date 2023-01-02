@@ -1,6 +1,8 @@
 from django.db import models
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib import admin
+import math
 
 # Create your models here.
 # class User(AbstractUser):
@@ -56,6 +58,22 @@ class Bloque(models.Model):
 
     def __str__(self):
         return self.cultivo.cultivo_name + ' ' + str(self.bloque_num)
+
+    @property
+    def valor(self):
+        return self.cultivo.precio_por_cama * self.camas_requeridas
+
+    @property
+    def valor_tiempo(self):
+        return math.floor(self.valor / self.tiempo_crecimiento)
+
+    @property
+    def familia(self):
+        return self.cultivo.familia_botanica.familia_name
+
+    @property
+    def valor_por_cama(self):
+        return self.cultivo.precio_por_cama
 
     class Meta:
         ordering = ['cultivo', 'bloque_num']

@@ -44,7 +44,19 @@
       </table>
     </div>
     <div id="total-price" class="p-2 h4">
-
+    </div>
+    <div id="block-amount" class="p-2 h4">
+    </div>
+    <div id="other-stats" class="p-2 h4">
+      <p>v1: minima ganancia por sector: {{ minimum_por_sector }}</p>
+      <p>v2: maxima ganancia por sector: {{ maximo_por_sector }}</p>
+      <p>v3: promedio de ganancias por sector: {{ promedio_por_sector }}</p>
+      <p>v4: varianza de ganancias por sector: {{varianza_por_sector }}</p>
+      <p>v5: ganancias proyectadas totales: {{ ganancia_total }}</p>
+      <p>v6: ganancia maxima posible: {{ ganancia_maxima_posible }}</p>
+      <p>v7: promedio de bloques por sector: {{ promedio_bloques_por_sector }}</p>
+      <p>v8: bloques totales: {{ bloques_totales }}</p>
+      <p>v9: bloques seleccionados: {{ bloques_chosen }}</p>
     </div>
   </div>
 </div>
@@ -171,10 +183,12 @@
       );
     }
     var total_price = 0;
+    var block_amount = 0;
     // adds all blocks of the sector to the table
     {% if object_list.first %}
     {% for bloque in object_list.first.bloques|chosen %}
       total_price += {{ bloque.cultivo.precio_por_cama }} * {{ bloque.camas_requeridas }};
+      block_amount += 1;
       var cama = $("#cama-{{ bloque.cama|add:1 }}");
       var day = '{{ bloque.dia_plantacion|date:"Y/m/d" }}';
       var start_date = block_date(day);
@@ -189,12 +203,14 @@
               '<h1>{{ bloque }}</h1>' +
               '<div>{{ bloque.camas_requeridas }} cama(s)</div>' +
               '<h1>{{ bloque.dia_plantacion|date:"d/m/Y" }} - {{ bloque.dia_plantacion|add_days:bloque.tiempo_crecimiento|date:"d/m/Y" }}</h1>' +
+              '<div>{{ bloque.cultivo.familia_botanica }}</div>' +
           '</div>' +
         '</div>'
       );
     {% endfor %}
     {% endif %}
-    $("#total-price").text("ganancias estimadas del sector {{ page_obj.number }}: $" + total_price.toLocaleString('es-CL'));
+    $("#total-price").text("ganancias estimadas del sector {{ page_obj.number }}: $" + total_price);
+    $("#block-amount").text("cantidad de bloques: " + block_amount);
 
     $(".bloque").hover(
       function() {

@@ -1,4 +1,6 @@
+import math
 from django.contrib import admin
+from django.db.models import F
 from farm.models import (
     Campo,
     Sector,
@@ -50,14 +52,20 @@ class BloqueAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "cultivo",
-        "bloque_num",
+        "familia",
+        "valor_por_cama",
         "dia_plantacion",
         "tiempo_crecimiento",
         "camas_requeridas",
-        #"precio",
-        #"dia_finalizar",
+        "bloque_num",
         "sector",
         "cama",
         "active",
         "chosen"
     )
+
+    # def valor(self, obj):
+    #     return obj.cultivo.precio_por_cama * obj.camas_requeridas
+
+    # def valor_tiempo(self, obj):
+    #     return math.floor(obj.cultivo.precio_por_cama * obj.camas_requeridas / obj.tiempo_crecimiento)

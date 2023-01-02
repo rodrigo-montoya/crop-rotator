@@ -28,6 +28,7 @@ from .serializers import BloqueSerializer, SectorSerializer
 import requests
 import json
 from datetime import date
+import statistics
 
 
 @login_required(login_url="/accounts/login/")
@@ -70,6 +71,7 @@ class HuertaCreateUpdateView(LoginRequiredMixin, CreateOrUpdateView):
         form.fields['delta'].widget = django_forms.NumberInput(attrs={
             'class': 'form-control',
             'placeholder': 'dias requeridos entre cultivos de la misma familia botanica'})
+        form.fields['delta'].label = 'delta (dias)'
         return form
 
     def get_success_url(self):
@@ -231,6 +233,37 @@ class CalendarioView(LoginRequiredMixin, ListView):
         for cultivo in cultivos:
             context['cultivos'][cultivo.cultivo_name] = i
             i += 1
+        bloques_total = Bloque.objects.filter(cultivo__campo=campo, active=True)
+        bloques_chosen = bloques_total.filter(chosen=True)
+        context['bloques_totales'] = bloques_total.count()
+        context['bloques_chosen'] = bloques_chosen.count()
+        ganancia_maxima_posible = 0
+        ganancia_total = 0
+        for bloque in bloques_total:
+            valor_bloque = bloque.camas_requeridas * bloque.cultivo.precio_por_cama
+            ganancia_maxima_posible += valor_bloque
+            if bloque.chosen:
+                ganancia_total += valor_bloque
+        context['ganancia_maxima_posible'] = ganancia_maxima_posible
+        context['ganancia_total'] = ganancia_total
+        ganancia_por_sector = {}
+        bloques_por_sector = {}
+        for sector in self.object_list:
+            ganancia_por_sector[sector.sector_num] = 0
+            bloques_por_sector[sector.sector_num] = 0
+            for bloque in bloques_chosen.filter(sector=sector):
+                valor_bloque = bloque.camas_requeridas * bloque.cultivo.precio_por_cama
+                ganancia_por_sector[sector.sector_num] += valor_bloque
+                if bloque.chosen:
+                    bloques_por_sector[sector.sector_num] += 1
+        context['maximo_por_sector'] = max(ganancia_por_sector.values())
+        context['minimum_por_sector'] = min(ganancia_por_sector.values())
+        context['promedio_por_sector'] = sum(ganancia_por_sector.values()) / len(ganancia_por_sector)
+        context['varianza_por_sector'] = 'na'
+        if len(ganancia_por_sector) > 1:
+            context['varianza_por_sector'] = statistics.variance(ganancia_por_sector.values())
+        context['promedio_bloques_por_sector'] = sum(bloques_por_sector.values()) / len(bloques_por_sector)
+
         return context
 
 
