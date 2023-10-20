@@ -1,16 +1,16 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Page User {% endblock %}
+{% block title %} mi huerta {% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
 
-          <div class="row">
-            <div class="col-md-8">
-              <div class="card">
-                <div class="card-header card-header-primary">
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header card-header-primary">
                 {% if is_add %}
                     <h4 class="card-title">Crear Huerta</h4>
                     <p class="card-category">Crear huerta y sectores</p>
@@ -18,18 +18,149 @@
                     <h4 class="card-title">Editar Huerta</h4>
                     <p class="card-category">Editar huerta y sectores</p>
                 {% endif %}
-                </div>
-                <div class="card-body">
-                    <form method="post">{% csrf_token %}
-                        {{ form.as_p}}
-                        <input type="submit" value="Save" class="btn btn-primary pull-right">
-                    </form>
-                </div>
-              </div>
             </div>
-          </div>
+            <div class="card-body">
+                <form class="form-horizontal" method="POST" action="">
+                    {% csrf_token %}
+                    {{ form.as_p}}
+                    {{ sector_forms.management_form }}
+                    {% for sector_f in sector_forms %}
+                    <div class="row form-row spacer">
+                        <div class="col-2">
+                            <label class="formset-label">{{ sector_f.camas.label }} {{ forloop.counter }}:</label>
+                        </div>
+                        <div class="col-3">
+                            <div class="input-group">
+                                {{ sector_f.camas }}
+                            </div>
+                        </div>
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-success add-form-row">+</button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div class="row spacer">
+                        <div class="col-4 offset-2">
+                            {% if is_add %}
+                                <button type="submit" class="btn btn-block btn-primary">Crear</button>
+                            {% else %}
+                                <button type="submit" class="btn btn-block btn-primary">Guardar</button>
+                            {% endif %}
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock content %}
 
 <!-- Specific Page JS goes HERE  -->
-{% block javascripts %}{% endblock javascripts %}
+{% block javascripts %}
+<script type='text/javascript'>
+    $(document).ready(function () {
+        {% if is_add %}
+        {% else %}
+            {% for sector in object.sectores|active %}
+                $('#id_form-{{ forloop.counter0 }}-camas').val('{{ sector.camas }}');
+                {% if forloop.last is not True %}
+                    $('.add-form-row').click();
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        //make all inputs required
+        $('input').prop('required', true);
+    });
+
+    //update element index
+    function updateElementIndex(el, prefix, ndx) {
+        //id regex = (form-#)
+        var id_regex = new RegExp('(' + prefix + '-\\d+)');
+        //replace for different number
+        var replacement = prefix + '-' + ndx;
+        //replace either attribute for, name or id with replacement
+        if ($(el).attr("for")) $(el).attr("for", $(el).attr("for").replace(id_regex, replacement));
+        if (el.id) el.id = el.id.replace(id_regex, replacement);
+        if (el.name) el.name = el.name.replace(id_regex, replacement);
+    }
+
+    //clone selected element
+    function cloneMore(selector, prefix) {
+        //clone element
+        var newElement = $(selector).clone(true);
+        //get total forms number
+        var total = $('#id_' + prefix + '-TOTAL_FORMS').val();
+        //for every input in the new element replace index number to a +1
+        //change id
+        //remove value and remove checked
+        newElement.find(':input:not([type=button]):not([type=submit]):not([type=reset])').each(function() {
+            var name = $(this).attr('name').replace('-' + (total-1) + '-', '-' + total + '-');
+            var id = 'id_' + name;
+            $(this).attr({'name': name, 'id': id}).val('').removeAttr('checked');
+        });
+
+        // find label replace it with number
+        newElement.find('label').each(function() {
+            $(this).html('Sector ' + (Number(total)+Number(1)) + ':');
+            var forValue = $(this).attr('for');
+            if (forValue) {
+                forValue = forValue.replace('-' + (total-1) + '-', '-' + total + '-');
+                $(this).attr({'for': forValue});
+            }
+        });
+        //update total forms
+        total++;
+        $('#id_' + prefix + '-TOTAL_FORMS').val(total);
+        //after selected item insert new element
+        //update button to remove button
+        $(selector).after(newElement);
+        var conditionRow = $('.form-row:not(:last)');
+        conditionRow.find('.btn.add-form-row')
+        .removeClass('btn-success').addClass('btn-danger')
+        .removeClass('add-form-row').addClass('remove-form-row')
+        .html('-');
+        return false;
+    }
+
+    //delete form row associated with the botton prefixed
+    function deleteForm(prefix, btn) {
+        // get total forms number
+        var total = parseInt($('#id_' + prefix + '-TOTAL_FORMS').val());
+        if (total > 1){
+            //remove closest form row
+            btn.closest('.form-row').remove();
+            //get all forms
+            var forms = $('.form-row');
+            //update total forms
+            $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);
+            //update each form input index
+            for (var i=0, formCount=forms.length; i<formCount; i++) {
+                $(forms.get(i)).find(':input').each(function() {
+                    updateElementIndex(this, prefix, i);
+                });
+                $(forms.get(i)).find('label').each(function() {
+                    $(this).html('Sector ' + (Number(i)+Number(1)) + ':');
+                });
+            }
+        }
+        return false;
+    }
+
+// adds form row on click
+// to childs of document with class add-form-row call function cloneMore on click
+    $(document).on('click', '.add-form-row', function(e){
+        //preventdefault click behaviour
+        e.preventDefault();
+        cloneMore('.form-row:last', 'form');
+        return false;
+    });
+
+    $(document).on('click', '.remove-form-row', function(e){
+        e.preventDefault();
+        deleteForm('form', $(this));
+        return false;
+    });
+    </script>
+{% endblock javascripts %}

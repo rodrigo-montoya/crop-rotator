@@ -5,3 +5,5 @@ mip
 numpy
 matplotlib
 gurobipy
+requests
+djangorestframework

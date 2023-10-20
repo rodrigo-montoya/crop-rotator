@@ -17,10 +17,19 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from django.views.generic.base import RedirectView
+from rest_framework import routers
+
+from farm import views
+
+router = routers.DefaultRouter()
+router.register(r'bloques', views.BloqueApiView)
+router.register(r'sectores', views.SectorApiView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('farm/', include('farm.urls')),
     path('accounts/', include('authentication.urls')),
     path('', RedirectView.as_view(url='/farm/', permanent=False)),
+    path('api/', include(router.urls)),
+    path('api/', include('rest_framework.urls')),
 ]

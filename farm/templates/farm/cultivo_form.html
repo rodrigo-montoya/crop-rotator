@@ -1,9 +1,10 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Page User {% endblock %}
+{% block title %} mis cultivos {% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}
+<link href="/static/assets/css/specific_style.css" rel="stylesheet" />
 {% endblock stylesheets %}
 
 {% block content %}
@@ -19,31 +20,42 @@
         <form class="form-horizontal" method="POST" action="">
           {% csrf_token %}
           <div class="cultivo_form_div">
-            <p>Cultivo:</p>
+            <h3 class="font-weight-bold">Cultivo</h3>
             {{ form.as_p}}
           </div>
+          <h4 class="font-weight-bold">Bloques</h4>
           {{ bloque_forms.management_form }}
 
           {% for bloque_f in bloque_forms %}
             <div class="row form-row spacer">
-              <p>Bloque:</p>
-              <div class="col-12">
-                <div class="input-group">
-                  {% comment %}
-                  <p> {{ bloque_f.dia_plantacion.label }} {{ bloque_f.dia_plantacion }}</p>
-                  <p> {{ bloque_f.tiempo_crecimiento.label }} {{ bloque_f.tiempo_crecimiento }}</p>
-                  <p> {{ bloque_f.camas_requeridas.label }} {{ bloque_f.camas_requeridas }}</p>
-                  {% endcomment %}
-                  {{ bloque_f.as_p }}
-                    <button type="button" class="btn btn-success add-form-row">+</button>
+              <div class="input-group">
+                <h5 class="formset-label">bloque {{ forloop.counter }}</h5>
+                <div class="row">
+                  <div class="col-4">
+                    <label>{{ bloque_f.dia_plantacion.label }}:</label>
+                    {{ bloque_f.dia_plantacion }}
                   </div>
+                  <div class="col-4">
+                    <label>{{ bloque_f.tiempo_crecimiento.label }}:</label>
+                    {{ bloque_f.tiempo_crecimiento }}
+                  </div>
+                  <div class="col-4">
+                    <label>{{ bloque_f.camas_requeridas.label }}:</label>
+                    {{ bloque_f.camas_requeridas }}
+                  </div>
+                  {% comment %}
+                    {{ bloque_f.as_p }}
+                  {% endcomment %}
+                </div>
+                <div class="row justify-content-end pr-3">
+                  <button type="button" class="btn btn-success add-form-row">+</button>
                 </div>
               </div>
             </div>
           {% endfor %}
           <div class="row spacer">
             <div class="col-4 offset-2">
-              <button type="submit" class="btn btn-block btn-primary">Save</button>
+              <button type="submit" class="btn btn-block btn-primary">Registrar</button>
             </div>
           </div>
         </form>
@@ -57,23 +69,53 @@
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
 <script type='text/javascript'>
+  $(document).ready(function () {
+    {% if is_add %}
+    {% else %}
+      $('#id_familia_botanica').val('{{ cultivo.familia_botanica }}');
+      {% for bloque in object.bloques|active %}
+        $('#id_form-{{ forloop.counter0 }}-dia_plantacion').val('{{ bloque.dia_plantacion|date:"Y-m-d" }}');
+        $('#id_form-{{ forloop.counter0 }}-tiempo_crecimiento').val('{{ bloque.tiempo_crecimiento }}');
+        $('#id_form-{{ forloop.counter0 }}-camas_requeridas').val('{{ bloque.camas_requeridas }}');
+        {% if forloop.last is not True %}
+            $('.add-form-row').click();
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    //make all inputs required
+    $('input').prop('required', true);
+  });
+
+  //update element index
   function updateElementIndex(el, prefix, ndx) {
+      //id regex = (form-#)
       var id_regex = new RegExp('(' + prefix + '-\\d+)');
+      //replace for different number
       var replacement = prefix + '-' + ndx;
       if ($(el).attr("for")) $(el).attr("for", $(el).attr("for").replace(id_regex, replacement));
       if (el.id) el.id = el.id.replace(id_regex, replacement);
       if (el.name) el.name = el.name.replace(id_regex, replacement);
   }
 
+  //clone selected element
   function cloneMore(selector, prefix) {
+      //clone element
       var newElement = $(selector).clone(true);
+      //get total forms number
       var total = $('#id_' + prefix + '-TOTAL_FORMS').val();
+      //for every input in the new element replace index number to a +1
+      //change id
+      //remove value and remove checked
       newElement.find(':input:not([type=button]):not([type=submit]):not([type=reset])').each(function() {
           var name = $(this).attr('name').replace('-' + (total-1) + '-', '-' + total + '-');
           var id = 'id_' + name;
           $(this).attr({'name': name, 'id': id}).val('').removeAttr('checked');
       });
-
+      newElement.find('.formset-label').each(function() {
+        $(this).html('Bloque ' + (Number(total)+Number(1)) + ':');
+      });
+      // find label replace it with number
       newElement.find('label').each(function() {
           var forValue = $(this).attr('for');
           if (forValue) {
@@ -81,8 +123,11 @@
               $(this).attr({'for': forValue});
           }
       });
+      //update total forms
       total++;
       $('#id_' + prefix + '-TOTAL_FORMS').val(total);
+      //after selected item insert new element
+      //update button to remove button
       $(selector).after(newElement);
       var conditionRow = $('.form-row:not(:last)');
       conditionRow.find('.btn.add-form-row')
@@ -92,17 +137,26 @@
       return false;
   }
 
+  // delete form row associated with the botton prefixed
   function deleteForm(prefix, btn) {
+      // get total forms number
       var total = parseInt($('#id_' + prefix + '-TOTAL_FORMS').val());
       if (total > 1){
-          btn.closest('.form-row').remove();
-          var forms = $('.form-row');
-          $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);
-          for (var i=0, formCount=forms.length; i<formCount; i++) {
-              $(forms.get(i)).find(':input').each(function() {
-                  updateElementIndex(this, prefix, i);
-              });
-          }
+        // remove closest form row
+        btn.closest('.form-row').remove();
+        // get all forms
+        var forms = $('.form-row');
+        //update total forms
+        $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);
+        // update each form input index
+        for (var i=0, formCount=forms.length; i<formCount; i++) {
+          $(forms.get(i)).find(':input').each(function() {
+            updateElementIndex(this, prefix, i);
+          });
+          $(forms.get(i)).find('.formset-label').each(function() {
+            $(this).html('Bloque ' + (Number(i)+Number(1)) + ':');
+          });
+        }
       }
       return false;
   }

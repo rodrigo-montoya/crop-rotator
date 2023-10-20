@@ -1,7 +1,6 @@
     <div class="sidebar" data-color="purple" data-background-color="white" data-image="/static/assets/img/sidebar-1.jpg">
       <div class="logo">
-        <a target="_blank" rel="noopener noreferrer"
-          href="https://appseed.us/admin-dashboards/django-dashboard-material" class="simple-text logo-normal">
+        <a href="{% url 'farm:home' %}" class="simple-text logo-normal">
           CROP-ROTATOR
         </a>
       </div>
@@ -27,10 +26,10 @@
               <p>Mis Cultivos</p>
             </a>
           </li>
-          <li class="nav-item {% if 'cronograma' in segment %} active {% endif %}">
-            <a class="nav-link" href="{% url 'farm:cronograma' %}">
+          <li class="nav-item {% if 'calendario' in segment %} active {% endif %}">
+            <a class="nav-link" href="{% url 'farm:calendario' %}">
               <i class="material-icons">dashboard</i>
-              <p>Cronograma</p>
+              <p>Calendario</p>
             </a>
           </li>
           <li class="nav-item {% if 'mi_usuario' in segment %} active {% endif %}">

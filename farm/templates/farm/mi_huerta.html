@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} UI Tables {% endblock %}
+{% block title %} mi huerta {% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -8,7 +8,24 @@
 {% block content %}
 
 {% if campo_exists %}
-  <a href="{% url 'farm:huerta_update' pk=campo.id %}" class="btn btn-primary btn-round">Editar mi huerta</a>
+  <div class="card">
+    <div class="card-header card-header-primary">
+      <h2 class="card-title">Mi Huerta</h2>
+      <p class="card-category h3">{{ campo }}</p>
+    </div>
+    <div class="card-body">
+      <ul>
+          {% for sector in campo.sectores|active %}
+            <li>
+              <p class="p-2 h4">Sector {{ forloop.counter }}: {{ sector.camas }} camas</p>
+            </li>
+          {% endfor %}
+      </ul>
+      <div class="card-footer justify-content-start">
+        <a href="{% url 'farm:huerta_update' pk=campo.id %}" class="btn btn-primary btn-round">Editar mi huerta</a>
+      </div>
+    </div>
+  </div>
 {% else %}
   <a href="{% url 'farm:huerta_create' %}" class="btn btn-primary btn-round">Crear mi huerta</a>
 {% endif %}

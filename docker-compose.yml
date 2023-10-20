@@ -23,3 +23,19 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - postgres
+
+  optimizer:
+    build:
+      context: ../optimizer
+      dockerfile: Dockerfile
+    volumes:
+      - ../optimizer/gurobi.lic:/opt/gurobi/gurobi.lic:ro
+      - ../optimizer/app:/app
+    environment:
+      - GRB_WLSACCESSID=bb9f41d3-e0bc-46b6-b023-646731fb0d44
+      - GRB_WLSSECRET=c373f139-276a-4f44-b1ef-c1807da73bb0
+      - GRB_LICENSEID=903945
+      - FLASK_APP=optimizer_app.py
+    ports:
+      - 5000:5000
+    command: flask --debug run --host=0.0.0.0 --port=5000
