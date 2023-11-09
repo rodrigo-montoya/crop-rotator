@@ -3,6 +3,15 @@ crop-rotator
 
 Plataforma de agricultura organica que permite hacer una rotación de cultivos optimizando ganancias monetarias.
 
+Este proyecto funciona en conjunto con el [optimizador](https://github.com/rodrigo-montoya/optimizer).
+
+dejar ambos proyectos en una carpeta para que funcione.
+````
+├── proyecto
+│   ├── crop-rotator
+│   ├── optimizer
+````
+
 Esquema inicial del código
 --------------------------
 
